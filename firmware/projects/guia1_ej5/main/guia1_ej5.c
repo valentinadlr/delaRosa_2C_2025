@@ -19,7 +19,7 @@
  * |:----------:|:-----------------------------------------------|
  * | 12/09/2023 | Document creation		                         |
  *
- * @author Valentina de la Rosa()
+ * @author Valentina de la Rosa(valentina.delarosa@ingenieria.uner.edu.ar)
  *
  */
 
