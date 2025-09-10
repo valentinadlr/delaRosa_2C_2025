@@ -54,20 +54,29 @@ void setBCD(uint8_t bcd, gpioConf_t *gpioVector)
 	}
 }
 
+int8_t  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)
+{
+
+    for (int i = digits - 1; i >= 0; i--) {
+        bcd_number[i] = data % 10;  // Guardar último dígito
+        data /= 10;        
+}
+    return 0; 
+}
+
 void DisplayBCD(uint32_t valor, int digitos, gpioConf_t *gpiosBCD, gpioConf_t *gpiosSEL) {
-    uint32_t divisor = 1;  // arranca en 1 fuera del bucle
+    uint8_t arreglo[digitos]; 
+
+    convertToBcdArray(valor, digitos, arreglo);
 
     for (int d = 0; d < digitos; d++) {
-        uint8_t digito = (valor / divisor) % 10; // separa el dígito correspondiente
-        divisor *= 10;  // para el siguiente dígito
+        uint8_t digito = arreglo[d];  
 
-        setBCD(digito, gpiosBCD);
+        setBCD(digito, gpiosBCD);     
 
-        GPIOOn(gpiosSEL[d].pin);
+        GPIOOn(gpiosSEL[d].pin);     
 
-        for (volatile int i = 0; i < 5000; i++); // delay pobre pero funciona
-
-        GPIOOff(gpiosSEL[d].pin);
+        GPIOOff(gpiosSEL[d].pin);     
     }
 }
 
