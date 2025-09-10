@@ -39,49 +39,36 @@ struct leds
 /*==================[external functions definition]==========================*/
 void diagrama_de_flujo(struct leds *puntero)
 {
-	puntero = &my_leds;
 	// if mode = ON : si if n_led = 1 si ..
-	if (puntero
-			->mode == ON)
+	if (puntero->mode == ON)
 	{
-		if (puntero
-				->n_led == 1)
+		if (puntero->n_led == 1)
 			LedOn(LED_1);
-		else if (puntero
-					 ->n_led == 2)
+		else if (puntero->n_led == 2)
 			LedOn(LED_2);
-		else if (puntero
-					 ->n_led == 3)
+		else if (puntero->n_led == 3)
 			LedOn(LED_3);
 	}
 	// if mode = OFF : si if n_led = 1 si ..
-	else if (puntero
-				 ->mode == OFF)
+	else if (puntero->mode == OFF)
 	{
-		if (puntero
-				->n_led == 1)
+		if (puntero->n_led == 1)
 			LedOff(LED_1);
-		else if (puntero
-					 ->n_led == 2)
+		else if (puntero->n_led == 2)
 			LedOff(LED_2);
-		else if (puntero
-					 ->n_led == 3)
+		else if (puntero->n_led == 3)
 			LedOff(LED_3);
 	}
 	// toggle = permite cambiar entre dos opciones on/off
-	else if (puntero
-				 ->mode == TOGGLE)
+	else if (puntero->mode == TOGGLE)
 	{
 		for (int i = 0; i < puntero->n_ciclos; i++)
 		{
-			if (puntero
-					->n_led == 1)
+			if (puntero->n_led == 1)
 				LedToggle(LED_1);
-			else if (puntero
-						 ->n_led == 2)
+			else if (puntero->n_led == 2)
 				LedToggle(LED_2);
-			else if (puntero
-						 ->n_led == 3)
+			else if (puntero->n_led == 3)
 				LedToggle(LED_3);
 
 			for (int j = 0; j < puntero->periodo / CONFIG_BLINK_PERIOD; j++) // yo le paso un periodo que lo divide por 100
@@ -94,18 +81,18 @@ void diagrama_de_flujo(struct leds *puntero)
 
 void app_main(void)
 {
-	LedsInit()
-	//acá le pasamos los datos que queremos
-	my_leds.n_led = 2;
+	LedsInit();
+	// acá le pasamos los datos que queremos
+	my_leds.n_led = 3;
 	my_leds.n_ciclos = 10;
-	my_leds.periodo = 1000;
-	my_leds.mode = 3
+	my_leds.periodo = 500;
+	my_leds.mode = 3;
 
 	diagrama_de_flujo(&my_leds);
 
-	while (1){
-	vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+	while (1)
+	{
+		vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 	}
-
 }
 /*==================[end of file]============================================*/
