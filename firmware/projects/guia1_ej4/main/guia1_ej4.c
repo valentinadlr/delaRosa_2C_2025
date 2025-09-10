@@ -2,10 +2,10 @@
  *
  * @section genDesc General Description
  *
- * This section describes how the program works.
- *
- * <a href="https://drive.google.com/...">Operation Example</a>
- *
+ * Con ayuda del programa se implementa una función que convierte un número entero de 32 bits
+ * a su representación en formato BCD.   
+ * El usuario debe indicar dígitos de salida y un puntero
+ * 
  * @section hardConn Hardware Connection
  *
  * |    Peripheral  |   ESP32   	|
