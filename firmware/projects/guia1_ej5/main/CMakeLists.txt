@@ -1,2 +1,2 @@
-idf_component_register(SRCS "guia1_ej5.c"
+idf_component_register(SRCS "guia1_ej5y6.c"
                     INCLUDE_DIRS "")
