@@ -23,6 +23,7 @@
 #include "led.h"
 #include "hc_sr04.h"
 #include "gpio_mcu.h"
+#include "switch.h"
 #include "lcditse0803.h"
 /*==================[macros and definitions]=================================*/
 #define CONFIG_DELAY_PERIOD 1000
@@ -32,7 +33,7 @@ TaskHandle_t led2_task_handle = NULL;
 TaskHandle_t led3_task_handle = NULL;
 bool act_med = false;
 bool hold = false;
-uint16_t medida;
+uint16_t medida = 0;
 /*==================[internal functions declaration]=========================*/
 
 static void Teclas(void *pvParameters)
@@ -61,7 +62,7 @@ static void Medir(void *pvParameters)
     {
         if (act_med)
         {
-            medida = HcSr04ReadDistanceInCentimeters(void);
+            medida = HcSr04ReadDistanceInCentimeters();
         }
         vTaskDelay(CONFIG_DELAY_PERIOD / portTICK_PERIOD_MS);
     }
@@ -96,7 +97,7 @@ static void LEDs(void *pvParameters)
         }
         else
         {
-            LedsOffAll()
+            LedsOffAll();
         }
         vTaskDelay(CONFIG_DELAY_PERIOD / portTICK_PERIOD_MS);
     }
@@ -108,12 +109,12 @@ static void Display(void *pvParameters)
     {
         if (act_med)
         {
-            if (!HOLD)
+            if (!hold)
                 LcdItsE0803Write(medida);
         }
         else
         {
-            LcdItsE0803Off()
+            LcdItsE0803Off();
         }
         vTaskDelay(CONFIG_DELAY_PERIOD / portTICK_PERIOD_MS);
     }
@@ -123,10 +124,10 @@ void app_main(void)
 {
     LedsInit();
     SwitchesInit();
-    HcSr04Deinit(gpio_t GPIO_3, gpio_t GPIO_5);
-    LcdItsE0803DeInit()
-    xTaskCreate(Teclas,   "Teclas",   512, NULL, 5, NULL);
-    xTaskCreate(Medir,    "Medir",    512, NULL, 4, NULL);
-    xTaskCreate(LEDs,     "LEDs",     512, NULL, 3, NULL);
-    xTaskCreate(Display,  "Display",  512, NULL, 3, NULL);
+    HcSr04Init(GPIO_3, GPIO_2);
+    LcdItsE0803Init();
+    xTaskCreate(Teclas, "Teclas", 512, NULL, 5, NULL);
+    xTaskCreate(Medir, "Medir", 512, NULL, 5, NULL);
+    xTaskCreate(LEDs, "LEDs", 512, NULL, 5, NULL);
+    xTaskCreate(Display, "Display", 512, NULL, 5, NULL);
 }
