@@ -34,7 +34,7 @@ TaskHandle_t display_task_handle = NULL;
 bool act_med = false;
 bool hold = false;
 uint16_t medida = 0;
-periodoUS = 1000000;
+int periodoUS = 1000000;
 /*==================[internal functions declaration]=========================*/
 
 void Tecla1(void)
@@ -47,31 +47,33 @@ void Tecla2(void)
     hold = !hold;
 }
 
-void FuncTimerA(void* param){
-    vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE); 
-    vTaskNotifyGiveFromISR(leds_task_handle, pdFALSE); 
-    vTaskNotifyGiveFromISR(display_task_handle, pdFALSE); 
+void FuncTimerA(void *param)
+{
+    vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE);
+    vTaskNotifyGiveFromISR(leds_task_handle, pdFALSE);
+    vTaskNotifyGiveFromISR(display_task_handle, pdFALSE);
 }
-
 
 static void Medir(void *pvParameters)
 {
     while (true)
     {
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         if (act_med)
         {
             medida = HcSr04ReadDistanceInCentimeters();
         }
     }
-    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 }
 
 static void LEDs(void *pvParameters)
 {
     while (true)
     {
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         if (act_med)
         {
+
             if (medida < 10)
                 LedsOffAll();
             else if (medida < 20)
@@ -98,13 +100,14 @@ static void LEDs(void *pvParameters)
             LedsOffAll();
         }
     }
-    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 }
 
 static void Display(void *pvParameters)
 {
     while (true)
     {
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+
         if (act_med)
         {
             if (!hold)
@@ -115,8 +118,8 @@ static void Display(void *pvParameters)
             LcdItsE0803Off();
         }
     }
-    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 }
+
 /*==================[external functions definition]==========================*/
 void app_main(void)
 {
