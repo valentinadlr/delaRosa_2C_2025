@@ -1,9 +1,22 @@
-/*! @mainpage Blinking
+/*! @mainpage Sistema de medición ultrasónica con FreeRTOS y Timer
  *
  * \section genDesc General Description
  *
+ * Se crea un nuevo proyecto en el que se modifica la actividad 1 de la corriente guía, 
+ * de manera de utilizar interrupciones para el control de las teclas 
+ * y timers para el control de tiempos.  
  *
- *
+ * -> Se eliminan los vTaskDelay
+ *  
+ * @section hardConn Hardware Connection
+ * 
+ * |   EDU-CIAA-NXP   |  PERIFÉRICO  |
+ * |:----------------:|:-------------|
+ * | GPIO_3           | ECHO         |
+ * | GPIO_2           | TRIGGER      |
+ * | +5V              | +5V          |
+ * | GND              | GND          |
+ * 
  * @section changelog Changelog
  *
  * |   Date	    | Description                                    |
@@ -13,7 +26,6 @@
  * @author Valentina de la Rosa (valentina.delarosa@ingenieria.uner.edu.ar)
  *
  */
-
 /*==================[inclusions]=============================================*/
 #include <stdio.h>
 #include <stdint.h>
@@ -36,24 +48,44 @@ bool hold = false;
 uint16_t medida = 0;
 int periodoUS = 1000000;
 /*==================[internal functions declaration]=========================*/
-
+/**
+ * @brief Rutina de interrupción para la tecla 1.
+ *
+ * Alterna el flag `act_med` para iniciar o detener la medición.
+ */
 void Tecla1(void)
 {
     act_med = !act_med;
 }
-
+/**
+ * @brief Rutina de interrupción para la tecla 2.
+ *
+ * Alterna el flag `hold` para congelar o liberar el valor mostrado en el display.
+ */
 void Tecla2(void)
 {
     hold = !hold;
 }
-
+/**
+ * @brief Callback del timer A.
+ *
+ * Envía notificaciones a las tareas de medición, LEDs y display para que se ejecuten.
+ *
+ * @param param Parámetro de usuario (no utilizado).
+ */
 void FuncTimerA(void *param)
 {
     vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE);
     vTaskNotifyGiveFromISR(leds_task_handle, pdFALSE);
     vTaskNotifyGiveFromISR(display_task_handle, pdFALSE);
 }
-
+/**
+ * @brief Tarea encargada de realizar la medición con el sensor ultrasónico.
+ *
+ * Espera notificaciones del timer y, si `act_med` está activo, actualiza la variable `medida`.
+ *
+ * @param pvParameters Parámetro de tarea FreeRTOS (no se utiliza).
+ */
 static void Medir(void *pvParameters)
 {
     while (true)
@@ -65,7 +97,13 @@ static void Medir(void *pvParameters)
         }
     }
 }
-
+/**
+ * @brief Tarea encargada de controlar los LEDs según la distancia medida.
+ *
+ * Se ejecuta en cada notificación del timer. Enciende/apaga los LEDs dependiendo del rango de `medida`.
+ *
+ * @param pvParameters Parámetro de tarea FreeRTOS (no se utiliza).
+ */
 static void LEDs(void *pvParameters)
 {
     while (true)
@@ -101,7 +139,14 @@ static void LEDs(void *pvParameters)
         }
     }
 }
-
+/**
+ * @brief Tarea encargada de manejar la visualización en el display LCD.
+ *
+ * Muestra la distancia en centímetros si la medición está activa y `hold` es falso.
+ * Si `act_med` es falso, apaga el display.
+ *
+ * @param pvParameters Parámetro de tarea FreeRTOS (no se utiliza).
+ */
 static void Display(void *pvParameters)
 {
     while (true)
@@ -119,8 +164,18 @@ static void Display(void *pvParameters)
         }
     }
 }
-
 /*==================[external functions definition]==========================*/
+/**
+ * @brief Función principal de la aplicación.
+ *
+ * Inicializa periféricos (LEDs, switches, HC-SR04, LCD, timer).
+ * Configura interrupciones para las teclas.
+ * Crea las tareas FreeRTOS:
+ * - Medir
+ * - LEDs
+ * - Display
+ * Inicia el timer A que sincroniza la ejecución periódica de dichas tareas.
+ */
 void app_main(void)
 {
     LedsInit();

@@ -1,8 +1,10 @@
-/*! @mainpage Template
+/*! @mainpage Visualización de número en Display BCD
  *
  * @section genDesc General Description
  *
- * This section describes how the program works.
+ * Este programa implementa la conversión de un número entero a formato BCD 
+ * y lo muestra a través de un conjunto de pines GPIO del microcontrolador ESP32, 
+ * que controlan tanto las líneas de datos como la selección de cada dígito del display.  
  *
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
@@ -10,14 +12,19 @@
  *
  * |    Peripheral  |   ESP32   	|
  * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
- *
+ * |  D0 (bit0)     |  GPIO_20      |
+ * |  D1 (bit1)     |  GPIO_21      |
+ * |  D2 (bit2)     |  GPIO_22      |
+ * |  D3 (bit3)     |  GPIO_23      |
+ * |  SEL_1         |  GPIO_9       |
+ * |  SEL_2         |  GPIO_18      |
+ * |  SEL_3         |  GPIO_19      |
  *
  * @section changelog Changelog
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 12/09/2023 | Document creation		                         |
+ * | 10/09/2025 | Document creation		                         |
  *
  * @author Valentina de la Rosa(valentina.delarosa@ingenieria.uner.edu.ar)
  *
@@ -30,14 +37,23 @@
 /*==================[macros and definitions]=================================*/
 
 /*==================[internal data definition]===============================*/
+/**
+ * @brief Estructura de configuración de un pin GPIO.
+ *
+ * Contiene el número de pin y la dirección de operación (entrada/salida).
+ */
 typedef struct
 {
     gpio_t pin;  
     io_t dir;    
 } gpioConf_t;
 /*==================[internal functions declaration]=========================*/
-
-/*==================[external functions definition]==========================*/
+/**
+ * @brief Configura las salidas GPIO para representar un dígito en BCD.
+ *
+ * @param[in] bcd Valor del dígito en formato decimal (0–9).
+ * @param[in] gpioVector Vector de 4 pines GPIO que representan los bits del BCD.
+ */
 void setBCD(uint8_t bcd, gpioConf_t *gpioVector)
 {
     for (int i = 0; i < 4; i++)
@@ -53,7 +69,14 @@ void setBCD(uint8_t bcd, gpioConf_t *gpioVector)
     	}
 	}
 }
-
+/**
+ * @brief Convierte un número entero a un arreglo de dígitos decimales (para BCD).
+ *
+ * @param[in] data Número entero a convertir.
+ * @param[in] digits Cantidad de dígitos de salida.
+ * @param[out] bcd_number Arreglo donde se almacenan los dígitos.
+ * @return 0 si la conversión fue exitosa.
+ */
 int8_t  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)
 {
 
@@ -63,7 +86,14 @@ int8_t  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)
 }
     return 0; 
 }
-
+/**
+ * @brief Muestra un número en un display multiplexado en formato BCD.
+ *
+ * @param[in] valor Número a mostrar.
+ * @param[in] digitos Cantidad de dígitos a visualizar.
+ * @param[in] gpiosBCD Vector de pines para los bits de datos (BCD).
+ * @param[in] gpiosSEL Vector de pines de selección para cada dígito del display.
+ */
 void DisplayBCD(uint32_t valor, int digitos, gpioConf_t *gpiosBCD, gpioConf_t *gpiosSEL) {
     uint8_t arreglo[digitos]; 
 
@@ -79,7 +109,16 @@ void DisplayBCD(uint32_t valor, int digitos, gpioConf_t *gpiosBCD, gpioConf_t *g
         GPIOOff(gpiosSEL[d].pin);     
     }
 }
-
+/*==================[external functions definition]==========================*/
+/**
+ * @brief Función principal de la aplicación.
+ *
+ * - Inicializa los pines GPIO asociados al BCD y a la selección de dígitos.  
+ * - Convierte el número entero definido en `numero` a formato BCD.  
+ * - Lo muestra en el display multiplexado.  
+ *
+ * @return 0 si la ejecución es exitosa.
+ */
 int app_main(void)
 {
     gpioConf_t gpios[4] = {

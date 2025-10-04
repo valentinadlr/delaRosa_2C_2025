@@ -2,9 +2,14 @@
  *
  * \section genDesc General Description
  *
- * This example makes LED_1 and LED_2 blink if SWITCH_1 or SWITCH_2 are pressed.
+ * Este ejemplo hace que:
+ * - El LED_1 parpadee mientras se mantenga presionado el SWITCH_1.  
+ * - El LED_2 parpadee mientras se mantenga presionado el SWITCH_2.  
+ * - El LED_3 parpadee mientras se mantengan presionados simultáneamente el SWITCH_1 y el SWITCH_2.  
  *
  * @section changelog Changelog
+ * 
+ * 10/09 Creación del documento
  *
  * @author Valentina de la Rosa (valentina.delarosa@ingenieria.uner.edu.ar)
  *

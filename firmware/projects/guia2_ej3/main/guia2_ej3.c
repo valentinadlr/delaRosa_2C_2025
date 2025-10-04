@@ -1,8 +1,14 @@
-/*! @mainpage Blinking
+/*! @mainpage Blinking con UART
  *
  * \section genDesc General Description
  *
- *
+ * Se crea un nuevo proyecto en el que se modifica la actividad 2 de la corriente guia, 
+ * agregando ahora el puerto serie.  
+ * 
+ * Además se permite controlar el inicio y la retención de la medición tanto mediante 
+ * las teclas físicas de la EDU-ESP como a través de comandos UART:
+ * - 'O': alterna el inicio o detención de mediciones.
+ * - 'H': activa/desactiva la función hold del display.
  *
  * @section changelog Changelog
  *
@@ -39,17 +45,26 @@ bool hold = false;
 uint16_t medida = 0;
 int periodoUS = 1000000;
 /*==================[internal functions declaration]=========================*/
-
+/**
+ * @brief Callback de la tecla 1 (SW1): alterna el estado de medición.
+ */
 void Tecla1(void)
 {
     act_med = !act_med;
 }
 
+/**
+ * @brief Callback de la tecla 2 (SW2): alterna el modo hold del display.
+ */
 void Tecla2(void)
 {
     hold = !hold;
 }
 
+/**
+ * @brief Función del temporizador A. Notifica a las tareas principales.
+ * @param param Puntero genérico (no utilizado).
+ */
 void FuncTimerA(void *param)
 {
     vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE);
@@ -57,6 +72,15 @@ void FuncTimerA(void *param)
     vTaskNotifyGiveFromISR(display_task_handle, pdFALSE);
 }
 
+/**
+ * @brief Rutina de interrupción UART. Lee un byte y ejecuta comandos de control.
+ * 
+ * Comandos:
+ * - 'O': alterna medición.
+ * - 'H': alterna modo hold.
+ * 
+ * @param pvParameters Parámetros de la tarea (no utilizado).
+ */
 void UART(void *pvParameters)
 {
     uint8_t dato;           
@@ -74,12 +98,26 @@ void UART(void *pvParameters)
     }
 }
 
+/**
+ * @brief Envía la distancia medida al puerto serie en formato:
+ * 
+ * `XXX cm\r\n`
+ */
 void Medir_UART()
 {
     UartSendString(UART_PC, (char*)UartItoa(medida, 10));
     UartSendString(UART_PC, " cm\r\n");
 }
 
+
+/**
+ * @brief Tarea que realiza la medición del sensor ultrasónico.
+ * 
+ * Espera notificación del temporizador y, si la medición está activa,
+ * obtiene la distancia y la envía por UART.
+ * 
+ * @param pvParameters Parámetros de la tarea (no utilizado).
+ */
 static void Medir(void *pvParameters)
 {
     while (true)
@@ -93,6 +131,16 @@ static void Medir(void *pvParameters)
     } 
 }
 
+/**
+ * @brief Tarea encargada del control de LEDs según la distancia medida.
+ * 
+ * - <10 cm: todos apagados  
+ * - <20 cm: LED1 encendido  
+ * - <30 cm: LED1 y LED2 encendidos  
+ * - ≥30 cm: todos encendidos  
+ * 
+ * @param pvParameters Parámetros de la tarea (no utilizado).
+ */
 static void LEDs(void *pvParameters)
 {
     while (true)
@@ -129,6 +177,13 @@ static void LEDs(void *pvParameters)
     }
 }
 
+/**
+ * @brief Tarea encargada de actualizar el display LCD con la distancia.
+ * 
+ * Si el modo hold está activo, mantiene la última medición mostrada.
+ * 
+ * @param pvParameters Parámetros de la tarea (no utilizado).
+ */
 static void Display(void *pvParameters)
 {
     while (true)

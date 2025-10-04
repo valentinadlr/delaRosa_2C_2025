@@ -1,14 +1,19 @@
-/*! @mainpage Blinking
+/*! @mainpage Control de LEDs con modos de operación
  *
  * \section genDesc General Description
  *
- * This example makes LED_1 blink.
+ * Este programa permite controlar el encendido de los LEDs mediante una estructura que define:  
+ * - El número de LED a controlar.  
+ * - El modo de operación (ON, OFF, TOGGLE).  
+ * - La cantidad de ciclos de parpadeo.  
+ * - El período de cada ciclo de encendido/apagado.  
+ * Todo a partir del diagrama de flujo proporcionado por la cátedra
  *
  * @section changelog Changelog
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 12/09/2023 | Document creation		                         |
+ * | 20/08/2025 | Creación del documento 	                         |
  *
  * @author Valentina de la Rosa (valentina.delarosa@ingenieria.uner.edu.ar)
  *
