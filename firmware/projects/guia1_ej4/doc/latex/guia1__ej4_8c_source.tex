@@ -1,0 +1,39 @@
+\doxysection{guia1\+\_\+ej4.\+c}
+\hypertarget{guia1__ej4_8c_source}{}\label{guia1__ej4_8c_source}\index{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej4/main/guia1\_ej4.c@{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej4/main/guia1\_ej4.c}}
+\mbox{\hyperlink{guia1__ej4_8c}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00023}00023\ \textcolor{comment}{/*==================[inclusions]=============================================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00026}00026\ \textcolor{comment}{/*==================[macros\ and\ definitions]=================================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00028}00028\ \textcolor{comment}{/*==================[internal\ data\ definition]===============================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00030}00030\ \textcolor{comment}{/*==================[internal\ functions\ declaration]=========================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00042}\mbox{\hyperlink{guia1__ej4_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{00042}}\ int8\_t\ \ \mbox{\hyperlink{guia1__ej4_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{convertToBcdArray}}\ (uint32\_t\ data,\ uint8\_t\ digits,\ uint8\_t\ *\ bcd\_number)}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ digits\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ bcd\_number[i]\ =\ data\ \%\ 10;\ \ \textcolor{comment}{//\ Guardar\ último\ dígito}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ data\ /=\ 10;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00052}00052\ \textcolor{comment}{/*==================[external\ functions\ definition]==========================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00060}\mbox{\hyperlink{guia1__ej4_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{00060}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia1__ej4_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\_main}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00061}00061\ \ \ \ \ uint32\_t\ numero\ =\ 12345;}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00062}00062\ \ \ \ \ uint8\_t\ arreglo[6];}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{guia1__ej4_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{convertToBcdArray}}(numero,\ 6,\ arreglo);}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00065}00065\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Número\ convertido\ a\ BCD:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\ "{}},\ arreglo[i]);}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00069}00069\ printf(\textcolor{stringliteral}{"{}/n"{}});}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej4_8c_source_l00071}00071\ \textcolor{comment}{/*==================[end\ of\ file]============================================*/}}
+
+\end{DoxyCode}

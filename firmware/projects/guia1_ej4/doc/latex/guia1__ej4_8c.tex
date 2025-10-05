@@ -1,0 +1,66 @@
+\doxysection{Referencia del archivo C\+:/\+Repositorios/dela\+Rosa\+\_\+2\+C\+\_\+2025/firmware/projects/guia1\+\_\+ej4/main/guia1\+\_\+ej4.c}
+\hypertarget{guia1__ej4_8c}{}\label{guia1__ej4_8c}\index{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej4/main/guia1\_ej4.c@{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej4/main/guia1\_ej4.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{guia1__ej4_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{convert\+To\+Bcd\+Array}} (uint32\+\_\+t data, uint8\+\_\+t digits, uint8\+\_\+t \texorpdfstring{$\ast$}{*}bcd\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Convierte un número entero de 32 bits a formato BCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{guia1__ej4_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\+\_\+main}} (void)
+\begin{DoxyCompactList}\small\item\em Función principal de la aplicación. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{guia1__ej4_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{guia1__ej4_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}\index{guia1\_ej4.c@{guia1\_ej4.c}!app\_main@{app\_main}}
+\index{app\_main@{app\_main}!guia1\_ej4.c@{guia1\_ej4.c}}
+\doxysubsubsection{\texorpdfstring{app\_main()}{app\_main()}}
+{\footnotesize\ttfamily \label{guia1__ej4_8c_a630544a7f0a2cc40d8a7fefab7e2fe70} 
+void app\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Función principal de la aplicación. 
+
+
+\begin{DoxyItemize}
+\item Declara un número entero a convertir. ~\newline
+
+\item Llama a \doxylink{guia1__ej4_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{convert\+To\+Bcd\+Array} para obtener su representación en BCD. ~\newline
+
+\item Imprime el resultado en la consola. 
+\end{DoxyItemize}
+
+Definición en la línea \mbox{\hyperlink{guia1__ej4_8c_source_l00060}{60}} del archivo \mbox{\hyperlink{guia1__ej4_8c_source}{guia1\+\_\+ej4.\+c}}.
+
+\Hypertarget{guia1__ej4_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}\index{guia1\_ej4.c@{guia1\_ej4.c}!convertToBcdArray@{convertToBcdArray}}
+\index{convertToBcdArray@{convertToBcdArray}!guia1\_ej4.c@{guia1\_ej4.c}}
+\doxysubsubsection{\texorpdfstring{convertToBcdArray()}{convertToBcdArray()}}
+{\footnotesize\ttfamily \label{guia1__ej4_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac} 
+int8\+\_\+t convert\+To\+Bcd\+Array (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data}{, }\item[{uint8\+\_\+t}]{digits}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bcd\+\_\+number}{}\end{DoxyParamCaption})}
+
+
+
+Convierte un número entero de 32 bits a formato BCD. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em data} & Número entero a convertir. \\
+\hline
+\mbox{\texttt{in}}  & {\em digits} & Cantidad de dígitos de salida. \\
+\hline
+\mbox{\texttt{out}}  & {\em bcd\+\_\+number} & Puntero al arreglo donde se almacenará el resultado en BCD.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+0 si la conversión fue exitosa.
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+Los dígitos se guardan en el arreglo en orden, de izquierda a derecha. 
+\end{DoxyNote}
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej4_8c_source_l00042}{42}} del archivo \mbox{\hyperlink{guia1__ej4_8c_source}{guia1\+\_\+ej4.\+c}}.
+

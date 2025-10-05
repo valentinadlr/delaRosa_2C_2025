@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Visualización de número en Display BCD</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1genDesc">
+<title>General Description</title><para>Este programa implementa la conversión de un número entero a formato BCD y lo muestra a través de un conjunto de pines GPIO del microcontrolador ESP32, que controlan tanto las líneas de datos como la selección de cada dígito del display. <linebreak/>
+</para>
+<para><ulink url="https://drive.google.com/...">Operation Example</ulink></para>
+</sect1>
+<sect1 id="index_1hardConn">
+<title>Hardware Connection</title><para><table rows="8" cols="2"><row>
+<entry thead="yes" align='center'><para>Peripheral  </para>
+</entry><entry thead="yes" align='left'><para>ESP32  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>D0 (bit0)  </para>
+</entry><entry thead="no" align='left'><para>GPIO_20  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>D1 (bit1)  </para>
+</entry><entry thead="no" align='left'><para>GPIO_21  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>D2 (bit2)  </para>
+</entry><entry thead="no" align='left'><para>GPIO_22  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>D3 (bit3)  </para>
+</entry><entry thead="no" align='left'><para>GPIO_23  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>SEL_1  </para>
+</entry><entry thead="no" align='left'><para>GPIO_9  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>SEL_2  </para>
+</entry><entry thead="no" align='left'><para>GPIO_18  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>SEL_3  </para>
+</entry><entry thead="no" align='left'><para>GPIO_19  </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="index_1changelog">
+<title>Changelog</title><para><table rows="2" cols="2"><row>
+<entry thead="yes" align='center'><para>Date  </para>
+</entry><entry thead="yes" align='left'><para>Description  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>10/09/2025  </para>
+</entry><entry thead="no" align='left'><para>Document creation  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="author"><para>Valentina de la Rosa(<ulink url="mailto:valentina.delarosa@ingenieria.uner.edu.ar">valentina.delarosa@ingenieria.uner.edu.ar</ulink>) </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c"/>
+  </compounddef>
+</doxygen>

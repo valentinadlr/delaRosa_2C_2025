@@ -1,0 +1,94 @@
+\doxysection{guia1\+\_\+ej5y6.\+c}
+\hypertarget{guia1__ej5y6_8c_source}{}\label{guia1__ej5y6_8c_source}\index{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej5/main/guia1\_ej5y6.c@{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej5/main/guia1\_ej5y6.c}}
+\mbox{\hyperlink{guia1__ej5y6_8c}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00033}00033\ \textcolor{comment}{/*==================[inclusions]=============================================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}gpio\_mcu.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00037}00037\ \textcolor{comment}{/*==================[macros\ and\ definitions]=================================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00039}00039\ \textcolor{comment}{/*==================[internal\ data\ definition]===============================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00045}\mbox{\hyperlink{structgpio_conf__t}{00045}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00047}\mbox{\hyperlink{structgpio_conf__t_aca3d4c5920a3f389dfded4a9726473a9}{00047}}\ \ \ \ \ gpio\_t\ \mbox{\hyperlink{structgpio_conf__t_aca3d4c5920a3f389dfded4a9726473a9}{pin}};\ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00048}\mbox{\hyperlink{structgpio_conf__t_a8f9801ec3144d1e53252a902330c58a1}{00048}}\ \ \ \ \ io\_t\ \mbox{\hyperlink{structgpio_conf__t_a8f9801ec3144d1e53252a902330c58a1}{dir}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00049}00049\ \}\ \mbox{\hyperlink{structgpio_conf__t}{gpioConf\_t}};}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00050}00050\ \textcolor{comment}{/*==================[internal\ functions\ declaration]=========================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00057}\mbox{\hyperlink{guia1__ej5y6_8c_a44b09146cfbbf3366c17a1ae206c444c}{00057}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia1__ej5y6_8c_a44b09146cfbbf3366c17a1ae206c444c}{setBCD}}(uint8\_t\ bcd,\ \mbox{\hyperlink{structgpio_conf__t}{gpioConf\_t}}\ *gpioVector)}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ uint8\_t\ bit\ =\ (bcd\ >>\ i)\ \&\ 0x01;\ \textcolor{comment}{//deja\ el\ último\ bit\ para\ ponerlo\ en\ alto\ o\ en\ bajo}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bit)}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOOn(gpioVector[i].pin);\ \ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ GPIOOff(gpioVector[i].pin);\ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00080}\mbox{\hyperlink{guia1__ej5y6_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{00080}}\ int8\_t\ \ \mbox{\hyperlink{guia1__ej5y6_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{convertToBcdArray}}\ (uint32\_t\ data,\ uint8\_t\ digits,\ uint8\_t\ *\ bcd\_number)}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00081}00081\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ digits\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ bcd\_number[i]\ =\ data\ \%\ 10;\ \ \textcolor{comment}{//\ Guardar\ último\ dígito}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ data\ /=\ 10;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00097}\mbox{\hyperlink{guia1__ej5y6_8c_a90f92130999438f2310ddeab55881e84}{00097}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia1__ej5y6_8c_a90f92130999438f2310ddeab55881e84}{DisplayBCD}}(uint32\_t\ valor,\ \textcolor{keywordtype}{int}\ digitos,\ \mbox{\hyperlink{structgpio_conf__t}{gpioConf\_t}}\ *gpiosBCD,\ \mbox{\hyperlink{structgpio_conf__t}{gpioConf\_t}}\ *gpiosSEL)\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00098}00098\ \ \ \ \ uint8\_t\ arreglo[digitos];\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{guia1__ej5y6_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{convertToBcdArray}}(valor,\ digitos,\ arreglo);}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ d\ =\ 0;\ d\ <\ digitos;\ d++)\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ uint8\_t\ digito\ =\ arreglo[d];\ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{guia1__ej5y6_8c_a44b09146cfbbf3366c17a1ae206c444c}{setBCD}}(digito,\ gpiosBCD);\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00107}00107\ \ \ \ \ \ \ \ \ GPIOOn(gpiosSEL[d].pin);\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00109}00109\ \ \ \ \ \ \ \ \ GPIOOff(gpiosSEL[d].pin);\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00112}00112\ \textcolor{comment}{/*==================[external\ functions\ definition]==========================*/}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00122}\mbox{\hyperlink{guia1__ej5y6_8c_a144c9a97815e4b794fd4352aedd33695}{00122}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{guia1__ej5y6_8c_a144c9a97815e4b794fd4352aedd33695}{app\_main}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{structgpio_conf__t}{gpioConf\_t}}\ gpios[4]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ \{GPIO\_20,\ GPIO\_OUTPUT\},\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ \{GPIO\_21,\ GPIO\_OUTPUT\},}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00127}00127\ \ \ \ \ \ \ \ \ \{GPIO\_22,\ GPIO\_OUTPUT\},}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00128}00128\ \ \ \ \ \ \ \ \ \{GPIO\_23,\ GPIO\_OUTPUT\}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00129}00129\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{structgpio_conf__t}{gpioConf\_t}}\ gpiosSEL[3]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00132}00132\ \ \ \ \ \ \ \ \ \{GPIO\_9,\ GPIO\_OUTPUT\},\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00133}00133\ \ \ \ \ \ \ \ \ \{GPIO\_18,\ GPIO\_OUTPUT\},}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ \{GPIO\_19,\ \ GPIO\_OUTPUT\}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00135}00135\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00139}00139\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ GPIOInit(gpios[i].pin,\ gpios[i].dir);}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<3;\ i++)\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00144}00144\ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00145}00145\ \ \ \ \ \ \ \ \ GPIOInit(gpiosSEL[i].pin,\ gpiosSEL[i].dir);}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00148}00148\ \ \ \ \ uint32\_t\ numero\ =\ 123;}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00150}00150\ \ \ \ \ \mbox{\hyperlink{guia1__ej5y6_8c_a90f92130999438f2310ddeab55881e84}{DisplayBCD}}(numero,\ 3,\ gpios,\ gpiosSEL);}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{return}\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00153}00153\ \}}
+\DoxyCodeLine{\Hypertarget{guia1__ej5y6_8c_source_l00154}00154\ \textcolor{comment}{/*==================[end\ of\ file]============================================*/}}
+
+\end{DoxyCode}

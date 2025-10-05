@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="guia1__ej5y6_8c" kind="file" language="C++">
+    <compoundname>guia1_ej5y6.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="yes">gpio_mcu.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c</label>
+        <link refid="guia1__ej5y6_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>gpio_mcu.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structgpio_conf__t" prot="public">gpioConf_t</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="guia1__ej5y6_8c_1a44b09146cfbbf3366c17a1ae206c444c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setBCD</definition>
+        <argsstring>(uint8_t bcd, gpioConf_t *gpioVector)</argsstring>
+        <name>setBCD</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>bcd</declname>
+        </param>
+        <param>
+          <type><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref> *</type>
+          <declname>gpioVector</declname>
+        </param>
+        <briefdescription>
+<para>Configura las salidas GPIO para representar un dígito en BCD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">bcd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valor del dígito en formato decimal (0–9). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">gpioVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector de 4 pines GPIO que representan los bits del BCD. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" line="57" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" bodystart="57" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="guia1__ej5y6_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t convertToBcdArray</definition>
+        <argsstring>(uint32_t data, uint8_t digits, uint8_t *bcd_number)</argsstring>
+        <name>convertToBcdArray</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>digits</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>bcd_number</declname>
+        </param>
+        <briefdescription>
+<para>Convierte un número entero a un arreglo de dígitos decimales (para BCD). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número entero a convertir. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">digits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cantidad de dígitos de salida. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">bcd_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arreglo donde se almacenan los dígitos. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 si la conversión fue exitosa. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" line="80" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" bodystart="80" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="guia1__ej5y6_8c_1a90f92130999438f2310ddeab55881e84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayBCD</definition>
+        <argsstring>(uint32_t valor, int digitos, gpioConf_t *gpiosBCD, gpioConf_t *gpiosSEL)</argsstring>
+        <name>DisplayBCD</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>valor</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>digitos</declname>
+        </param>
+        <param>
+          <type><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref> *</type>
+          <declname>gpiosBCD</declname>
+        </param>
+        <param>
+          <type><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref> *</type>
+          <declname>gpiosSEL</declname>
+        </param>
+        <briefdescription>
+<para>Muestra un número en un display multiplexado en formato BCD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">valor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número a mostrar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">digitos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cantidad de dígitos a visualizar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">gpiosBCD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector de pines para los bits de datos (BCD). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">gpiosSEL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector de pines de selección para cada dígito del display. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" line="97" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" bodystart="97" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="guia1__ej5y6_8c_1a144c9a97815e4b794fd4352aedd33695" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int app_main</definition>
+        <argsstring>(void)</argsstring>
+        <name>app_main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Función principal de la aplicación. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Inicializa los pines GPIO asociados al BCD y a la selección de dígitos. <linebreak/>
+</para>
+</listitem><listitem><para>Convierte el número entero definido en <computeroutput>numero</computeroutput> a formato BCD. <linebreak/>
+</para>
+</listitem><listitem><para>Lo muestra en el display multiplexado. <linebreak/>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="return"><para>0 si la ejecución es exitosa. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" line="122" column="5" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" bodystart="122" bodyend="153"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*==================[inclusions]=============================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;gpio_mcu.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*==================[macros<sp/>and<sp/>definitions]=================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*==================[internal<sp/>data<sp/>definition]===============================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structgpio_conf__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47" refid="structgpio_conf__t_1aca3d4c5920a3f389dfded4a9726473a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>gpio_t<sp/><ref refid="structgpio_conf__t_1aca3d4c5920a3f389dfded4a9726473a9" kindref="member">pin</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="48" refid="structgpio_conf__t_1a8f9801ec3144d1e53252a902330c58a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>io_t<sp/><ref refid="structgpio_conf__t_1a8f9801ec3144d1e53252a902330c58a1" kindref="member">dir</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}<sp/><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*==================[internal<sp/>functions<sp/>declaration]=========================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="guia1__ej5y6_8c_1a44b09146cfbbf3366c17a1ae206c444c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia1__ej5y6_8c_1a44b09146cfbbf3366c17a1ae206c444c" kindref="member">setBCD</ref>(uint8_t<sp/>bcd,<sp/><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref><sp/>*gpioVector)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>i++)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>bit<sp/>=<sp/>(bcd<sp/>&gt;&gt;<sp/>i)<sp/>&amp;<sp/>0x01;<sp/></highlight><highlight class="comment">//deja<sp/>el<sp/>último<sp/>bit<sp/>para<sp/>ponerlo<sp/>en<sp/>alto<sp/>o<sp/>en<sp/>bajo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bit)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIOOn(gpioVector[i].pin);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIOOff(gpioVector[i].pin);<sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80" refid="guia1__ej5y6_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" refkind="member"><highlight class="normal">int8_t<sp/><sp/><ref refid="guia1__ej5y6_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" kindref="member">convertToBcdArray</ref><sp/>(uint32_t<sp/>data,<sp/>uint8_t<sp/>digits,<sp/>uint8_t<sp/>*<sp/>bcd_number)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>digits<sp/>-<sp/>1;<sp/>i<sp/>&gt;=<sp/>0;<sp/>i--)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcd_number[i]<sp/>=<sp/>data<sp/>%<sp/>10;<sp/><sp/></highlight><highlight class="comment">//<sp/>Guardar<sp/>último<sp/>dígito</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>/=<sp/>10;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97" refid="guia1__ej5y6_8c_1a90f92130999438f2310ddeab55881e84" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia1__ej5y6_8c_1a90f92130999438f2310ddeab55881e84" kindref="member">DisplayBCD</ref>(uint32_t<sp/>valor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>digitos,<sp/><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref><sp/>*gpiosBCD,<sp/><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref><sp/>*gpiosSEL)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>arreglo[digitos];<sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia1__ej5y6_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" kindref="member">convertToBcdArray</ref>(valor,<sp/>digitos,<sp/>arreglo);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d<sp/>=<sp/>0;<sp/>d<sp/>&lt;<sp/>digitos;<sp/>d++)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>digito<sp/>=<sp/>arreglo[d];<sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="guia1__ej5y6_8c_1a44b09146cfbbf3366c17a1ae206c444c" kindref="member">setBCD</ref>(digito,<sp/>gpiosBCD);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIOOn(gpiosSEL[d].pin);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIOOff(gpiosSEL[d].pin);<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">/*==================[external<sp/>functions<sp/>definition]==========================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="guia1__ej5y6_8c_1a144c9a97815e4b794fd4352aedd33695" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="guia1__ej5y6_8c_1a144c9a97815e4b794fd4352aedd33695" kindref="member">app_main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref><sp/>gpios[4]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{GPIO_20,<sp/>GPIO_OUTPUT},<sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{GPIO_21,<sp/>GPIO_OUTPUT},</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{GPIO_22,<sp/>GPIO_OUTPUT},</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{GPIO_23,<sp/>GPIO_OUTPUT}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structgpio_conf__t" kindref="compound">gpioConf_t</ref><sp/>gpiosSEL[3]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{GPIO_9,<sp/>GPIO_OUTPUT},<sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{GPIO_18,<sp/>GPIO_OUTPUT},</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{GPIO_19,<sp/><sp/>GPIO_OUTPUT}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>i++)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIOInit(gpios[i].pin,<sp/>gpios[i].dir);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;3;<sp/>i++)<sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIOInit(gpiosSEL[i].pin,<sp/>gpiosSEL[i].dir);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>numero<sp/>=<sp/>123;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia1__ej5y6_8c_1a90f92130999438f2310ddeab55881e84" kindref="member">DisplayBCD</ref>(numero,<sp/>3,<sp/>gpios,<sp/>gpiosSEL);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0<sp/>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">/*==================[end<sp/>of<sp/>file]============================================*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c"/>
+  </compounddef>
+</doxygen>

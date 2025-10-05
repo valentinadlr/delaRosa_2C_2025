@@ -1,0 +1,161 @@
+\doxysection{guia2\+\_\+ej3.\+c}
+\hypertarget{guia2__ej3_8c_source}{}\label{guia2__ej3_8c_source}\index{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia2\_ej3/main/guia2\_ej3.c@{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia2\_ej3/main/guia2\_ej3.c}}
+\mbox{\hyperlink{guia2__ej3_8c}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00023}00023\ \textcolor{comment}{/*==================[inclusions]=============================================*/}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}freertos/FreeRTOS.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}freertos/task.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}led.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}hc\_sr04.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}gpio\_mcu.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}switch.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}lcditse0803.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}timer\_mcu.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}uart\_mcu.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}esp\_mac.h"{}}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00037}00037\ \textcolor{comment}{/*==================[macros\ and\ definitions]=================================*/}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00038}00038\ \textcolor{comment}{/*==================[internal\ data\ definition]===============================*/}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00039}\mbox{\hyperlink{guia2__ej3_8c_a2b0cb40d7a31ce7e8b3f906fd55df312}{00039}}\ TaskHandle\_t\ \mbox{\hyperlink{guia2__ej3_8c_a2b0cb40d7a31ce7e8b3f906fd55df312}{medir\_task\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00040}\mbox{\hyperlink{guia2__ej3_8c_a23fa2e6a8b0cbaf464c822d101153441}{00040}}\ TaskHandle\_t\ \mbox{\hyperlink{guia2__ej3_8c_a23fa2e6a8b0cbaf464c822d101153441}{leds\_task\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00041}\mbox{\hyperlink{guia2__ej3_8c_abaf073dd4f91187228bc62d1177a72e4}{00041}}\ TaskHandle\_t\ \mbox{\hyperlink{guia2__ej3_8c_abaf073dd4f91187228bc62d1177a72e4}{display\_task\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00042}\mbox{\hyperlink{guia2__ej3_8c_a4e4967ac70f1e8a89b2fea62027a968c}{00042}}\ TaskHandle\_t\ \mbox{\hyperlink{guia2__ej3_8c_a4e4967ac70f1e8a89b2fea62027a968c}{uart\_task\_handle}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00043}\mbox{\hyperlink{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}{00043}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}{act\_med}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00044}\mbox{\hyperlink{guia2__ej3_8c_af0129e079b57e897edf00f22cc25f3d4}{00044}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{guia2__ej3_8c_af0129e079b57e897edf00f22cc25f3d4}{hold}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00045}\mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{00045}}\ uint16\_t\ \mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00046}\mbox{\hyperlink{guia2__ej3_8c_ac5fe4e48184e8e9f39fe85be5c91e77d}{00046}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{guia2__ej3_8c_ac5fe4e48184e8e9f39fe85be5c91e77d}{periodoUS}}\ =\ 1000000;}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00047}00047\ \textcolor{comment}{/*==================[internal\ functions\ declaration]=========================*/}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00051}\mbox{\hyperlink{guia2__ej3_8c_abc0fa49d4e5b6933f142b6e937273ccb}{00051}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia2__ej3_8c_abc0fa49d4e5b6933f142b6e937273ccb}{Tecla1}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}{act\_med}}\ =\ !\mbox{\hyperlink{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}{act\_med}};}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00059}\mbox{\hyperlink{guia2__ej3_8c_ab4f43cc73c4122e2a09d720744b72c50}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia2__ej3_8c_ab4f43cc73c4122e2a09d720744b72c50}{Tecla2}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00060}00060\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{guia2__ej3_8c_af0129e079b57e897edf00f22cc25f3d4}{hold}}\ =\ !\mbox{\hyperlink{guia2__ej3_8c_af0129e079b57e897edf00f22cc25f3d4}{hold}};}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00068}\mbox{\hyperlink{guia2__ej3_8c_afaccfed84cd1498a05ea04a65f1209b1}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia2__ej3_8c_afaccfed84cd1498a05ea04a65f1209b1}{FuncTimerA}}(\textcolor{keywordtype}{void}\ *param)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00070}00070\ \ \ \ \ vTaskNotifyGiveFromISR(\mbox{\hyperlink{guia2__ej3_8c_a2b0cb40d7a31ce7e8b3f906fd55df312}{medir\_task\_handle}},\ pdFALSE);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00071}00071\ \ \ \ \ vTaskNotifyGiveFromISR(\mbox{\hyperlink{guia2__ej3_8c_a23fa2e6a8b0cbaf464c822d101153441}{leds\_task\_handle}},\ pdFALSE);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00072}00072\ \ \ \ \ vTaskNotifyGiveFromISR(\mbox{\hyperlink{guia2__ej3_8c_abaf073dd4f91187228bc62d1177a72e4}{display\_task\_handle}},\ pdFALSE);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00084}\mbox{\hyperlink{guia2__ej3_8c_ad32962f655aec828bcc030f9d9acb2c9}{00084}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia2__ej3_8c_ad32962f655aec828bcc030f9d9acb2c9}{UART}}(\textcolor{keywordtype}{void}\ *pvParameters)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00086}00086\ \ \ \ \ uint8\_t\ dato;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00087}00087\ \ \ \ \ UartReadByte(UART\_PC,\ \&dato);\ \ \ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dato)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'O'}:}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{guia2__ej3_8c_abc0fa49d4e5b6933f142b6e937273ccb}{Tecla1}}();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00094}00094\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'H'}:}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{guia2__ej3_8c_ab4f43cc73c4122e2a09d720744b72c50}{Tecla2}}();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00106}\mbox{\hyperlink{guia2__ej3_8c_a5121c6b0aa7ff8709d335c065ddac2e3}{00106}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia2__ej3_8c_a5121c6b0aa7ff8709d335c065ddac2e3}{Medir\_UART}}()}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00107}00107\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00108}00108\ \ \ \ \ UartSendString(UART\_PC,\ (\textcolor{keywordtype}{char}*)UartItoa(\mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}},\ 10));}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00109}00109\ \ \ \ \ UartSendString(UART\_PC,\ \textcolor{stringliteral}{"{}\ cm\(\backslash\)r\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00110}00110\ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00121}00121\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Medir(\textcolor{keywordtype}{void}\ *pvParameters)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00122}00122\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00124}00124\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ ulTaskNotifyTake(pdTRUE,\ portMAX\_DELAY);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}{act\_med}})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00127}00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}}\ =\ HcSr04ReadDistanceInCentimeters();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{guia2__ej3_8c_a5121c6b0aa7ff8709d335c065ddac2e3}{Medir\_UART}}()\ ;}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00131}00131\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00132}00132\ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00144}00144\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ LEDs(\textcolor{keywordtype}{void}\ *pvParameters)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00145}00145\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00147}00147\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00148}00148\ \ \ \ \ \ \ \ \ ulTaskNotifyTake(pdTRUE,\ portMAX\_DELAY);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}{act\_med}})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00150}00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}}\ <\ 10)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedsOffAll();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}}\ <\ 20)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOn(LED\_1);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOff(LED\_2);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOff(LED\_3);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}}\ <\ 30)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOn(LED\_1);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOn(LED\_2);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOff(LED\_3);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOn(LED\_1);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOn(LED\_2);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LedOn(LED\_3);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00172}00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00174}00174\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ LedsOffAll();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00177}00177\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00178}00178\ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00187}00187\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Display(\textcolor{keywordtype}{void}\ *pvParameters)}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00188}00188\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00190}00190\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00191}00191\ \ \ \ \ \ \ \ \ ulTaskNotifyTake(pdTRUE,\ portMAX\_DELAY);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}{act\_med}})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00194}00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{guia2__ej3_8c_af0129e079b57e897edf00f22cc25f3d4}{hold}})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LcdItsE0803Write(\mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}});}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00199}00199\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ LcdItsE0803Off();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00201}00201\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00202}00202\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00203}00203\ \}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00205}00205\ \textcolor{comment}{/*==================[external\ functions\ definition]==========================*/}}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00206}\mbox{\hyperlink{guia2__ej3_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{00206}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{guia2__ej3_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\_main}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00207}00207\ \{}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00208}00208\ \ \ \ \ LedsInit();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00209}00209\ \ \ \ \ SwitchesInit();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00210}00210\ \ \ \ \ HcSr04Init(GPIO\_3,\ GPIO\_2);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00211}00211\ \ \ \ \ LcdItsE0803Init();}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00212}00212\ \ \ \ \ SwitchActivInt(SWITCH\_1,\ \mbox{\hyperlink{guia2__ej3_8c_abc0fa49d4e5b6933f142b6e937273ccb}{Tecla1}},\ NULL);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00213}00213\ \ \ \ \ SwitchActivInt(SWITCH\_2,\ \mbox{\hyperlink{guia2__ej3_8c_ab4f43cc73c4122e2a09d720744b72c50}{Tecla2}},\ NULL);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00214}00214\ \ \ \ \ xTaskCreate(Medir,\ \textcolor{stringliteral}{"{}Medir"{}},\ 512,\ NULL,\ 5,\ \&\mbox{\hyperlink{guia2__ej3_8c_a2b0cb40d7a31ce7e8b3f906fd55df312}{medir\_task\_handle}});}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00215}00215\ \ \ \ \ xTaskCreate(LEDs,\ \textcolor{stringliteral}{"{}LEDs"{}},\ 512,\ NULL,\ 5,\ \&\mbox{\hyperlink{guia2__ej3_8c_a23fa2e6a8b0cbaf464c822d101153441}{leds\_task\_handle}});}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00216}00216\ \ \ \ \ xTaskCreate(Display,\ \textcolor{stringliteral}{"{}Display"{}},\ 512,\ NULL,\ 5,\ \&\mbox{\hyperlink{guia2__ej3_8c_abaf073dd4f91187228bc62d1177a72e4}{display\_task\_handle}});}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00217}00217\ \ \ \ \ timer\_config\_t\ timer\ =\ \{.timer\ =\ TIMER\_A,\ .period\ =\ \mbox{\hyperlink{guia2__ej3_8c_ac5fe4e48184e8e9f39fe85be5c91e77d}{periodoUS}},\ .func\_p\ =\ \mbox{\hyperlink{guia2__ej3_8c_afaccfed84cd1498a05ea04a65f1209b1}{FuncTimerA}},\ .param\_p\ =\ NULL\};}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00218}00218\ \ \ \ \ serial\_config\_t\ uart\_pc\ =\ \{.port\ =\ UART\_PC,\ .baud\_rate\ =\ 9600,\ .func\_p\ =\ \mbox{\hyperlink{guia2__ej3_8c_ad32962f655aec828bcc030f9d9acb2c9}{UART}},\ .param\_p\ =\ NULL\};}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00220}00220\ \ \ \ \ TimerInit(\&timer);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00221}00221\ \ \ \ \ UartInit(\&uart\_pc);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00223}00223\ \ \ \ \ TimerStart(TIMER\_A);}
+\DoxyCodeLine{\Hypertarget{guia2__ej3_8c_source_l00224}00224\ \}}
+
+\end{DoxyCode}

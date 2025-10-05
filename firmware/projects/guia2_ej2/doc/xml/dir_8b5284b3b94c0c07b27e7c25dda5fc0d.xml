@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="dir_8b5284b3b94c0c07b27e7c25dda5fc0d" kind="dir">
+    <compoundname>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej2/main</compoundname>
+    <innerfile refid="guia2__ej2_8c">guia2_ej2.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej2/main/"/>
+  </compounddef>
+</doxygen>

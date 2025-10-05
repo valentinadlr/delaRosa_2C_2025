@@ -1,0 +1,137 @@
+\doxysection{Referencia del archivo C\+:/\+Repositorios/dela\+Rosa\+\_\+2\+C\+\_\+2025/firmware/projects/guia2\+\_\+ej1/main/guia2\+\_\+ej1.c}
+\hypertarget{guia2__ej1_8c}{}\label{guia2__ej1_8c}\index{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia2\_ej1/main/guia2\_ej1.c@{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia2\_ej1/main/guia2\_ej1.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}led.\+h"{}}\newline
+{\ttfamily \#include "{}hc\+\_\+sr04.\+h"{}}\newline
+{\ttfamily \#include "{}gpio\+\_\+mcu.\+h"{}}\newline
+{\ttfamily \#include "{}switch.\+h"{}}\newline
+{\ttfamily \#include "{}lcditse0803.\+h"{}}\newline
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{guia2__ej1_8c_a6a54daced8113a9f66fe411251311e1a}{CONFIG\+\_\+\+DELAY\+\_\+\+PERIOD}}~1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{guia2__ej1_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\+\_\+main}} (void)
+\begin{DoxyCompactList}\small\item\em Función principal de la aplicación. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{guia2__ej1_8c_a7ed57de8d21d781d23769192b2fd2ee8}{led1\+\_\+task\+\_\+handle}} = NULL
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{guia2__ej1_8c_a4f55e6e8926c8935cd2f0478e49bf593}{led2\+\_\+task\+\_\+handle}} = NULL
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{guia2__ej1_8c_a1196b6231b2d299f8f7ca58066b26069}{led3\+\_\+task\+\_\+handle}} = NULL
+\item 
+bool \mbox{\hyperlink{guia2__ej1_8c_acdb1d9e75320b05630b724455b996078}{act\+\_\+med}} = false
+\item 
+bool \mbox{\hyperlink{guia2__ej1_8c_af0129e079b57e897edf00f22cc25f3d4}{hold}} = false
+\item 
+uint16\+\_\+t \mbox{\hyperlink{guia2__ej1_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}} = 0
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{guia2__ej1_8c_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{guia2__ej1_8c_a6a54daced8113a9f66fe411251311e1a}\index{guia2\_ej1.c@{guia2\_ej1.c}!CONFIG\_DELAY\_PERIOD@{CONFIG\_DELAY\_PERIOD}}
+\index{CONFIG\_DELAY\_PERIOD@{CONFIG\_DELAY\_PERIOD}!guia2\_ej1.c@{guia2\_ej1.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_DELAY\_PERIOD}{CONFIG\_DELAY\_PERIOD}}
+{\footnotesize\ttfamily \label{guia2__ej1_8c_a6a54daced8113a9f66fe411251311e1a} 
+\#define CONFIG\+\_\+\+DELAY\+\_\+\+PERIOD~1000}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej1_8c_source_l00050}{50}} del archivo \mbox{\hyperlink{guia2__ej1_8c_source}{guia2\+\_\+ej1.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{guia2__ej1_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{guia2__ej1_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}\index{guia2\_ej1.c@{guia2\_ej1.c}!app\_main@{app\_main}}
+\index{app\_main@{app\_main}!guia2\_ej1.c@{guia2\_ej1.c}}
+\doxysubsubsection{\texorpdfstring{app\_main()}{app\_main()}}
+{\footnotesize\ttfamily \label{guia2__ej1_8c_a630544a7f0a2cc40d8a7fefab7e2fe70} 
+void app\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Función principal de la aplicación. 
+
+Inicializa los periféricos (LEDs, switches, HC-\/\+SR04, display) ~\newline
+ y crea las cuatro tareas Free\+RTOS\+: Teclas, Medir, LEDs y Display. 
+
+Definición en la línea \mbox{\hyperlink{guia2__ej1_8c_source_l00179}{179}} del archivo \mbox{\hyperlink{guia2__ej1_8c_source}{guia2\+\_\+ej1.\+c}}.
+
+
+
+\label{doc-var-members}
+\Hypertarget{guia2__ej1_8c_doc-var-members}
+\doxysubsection{Documentación de variables}
+\Hypertarget{guia2__ej1_8c_acdb1d9e75320b05630b724455b996078}\index{guia2\_ej1.c@{guia2\_ej1.c}!act\_med@{act\_med}}
+\index{act\_med@{act\_med}!guia2\_ej1.c@{guia2\_ej1.c}}
+\doxysubsubsection{\texorpdfstring{act\_med}{act\_med}}
+{\footnotesize\ttfamily \label{guia2__ej1_8c_acdb1d9e75320b05630b724455b996078} 
+bool act\+\_\+med = false}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej1_8c_source_l00055}{55}} del archivo \mbox{\hyperlink{guia2__ej1_8c_source}{guia2\+\_\+ej1.\+c}}.
+
+\Hypertarget{guia2__ej1_8c_af0129e079b57e897edf00f22cc25f3d4}\index{guia2\_ej1.c@{guia2\_ej1.c}!hold@{hold}}
+\index{hold@{hold}!guia2\_ej1.c@{guia2\_ej1.c}}
+\doxysubsubsection{\texorpdfstring{hold}{hold}}
+{\footnotesize\ttfamily \label{guia2__ej1_8c_af0129e079b57e897edf00f22cc25f3d4} 
+bool hold = false}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej1_8c_source_l00056}{56}} del archivo \mbox{\hyperlink{guia2__ej1_8c_source}{guia2\+\_\+ej1.\+c}}.
+
+\Hypertarget{guia2__ej1_8c_a7ed57de8d21d781d23769192b2fd2ee8}\index{guia2\_ej1.c@{guia2\_ej1.c}!led1\_task\_handle@{led1\_task\_handle}}
+\index{led1\_task\_handle@{led1\_task\_handle}!guia2\_ej1.c@{guia2\_ej1.c}}
+\doxysubsubsection{\texorpdfstring{led1\_task\_handle}{led1\_task\_handle}}
+{\footnotesize\ttfamily \label{guia2__ej1_8c_a7ed57de8d21d781d23769192b2fd2ee8} 
+Task\+Handle\+\_\+t led1\+\_\+task\+\_\+handle = NULL}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej1_8c_source_l00052}{52}} del archivo \mbox{\hyperlink{guia2__ej1_8c_source}{guia2\+\_\+ej1.\+c}}.
+
+\Hypertarget{guia2__ej1_8c_a4f55e6e8926c8935cd2f0478e49bf593}\index{guia2\_ej1.c@{guia2\_ej1.c}!led2\_task\_handle@{led2\_task\_handle}}
+\index{led2\_task\_handle@{led2\_task\_handle}!guia2\_ej1.c@{guia2\_ej1.c}}
+\doxysubsubsection{\texorpdfstring{led2\_task\_handle}{led2\_task\_handle}}
+{\footnotesize\ttfamily \label{guia2__ej1_8c_a4f55e6e8926c8935cd2f0478e49bf593} 
+Task\+Handle\+\_\+t led2\+\_\+task\+\_\+handle = NULL}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej1_8c_source_l00053}{53}} del archivo \mbox{\hyperlink{guia2__ej1_8c_source}{guia2\+\_\+ej1.\+c}}.
+
+\Hypertarget{guia2__ej1_8c_a1196b6231b2d299f8f7ca58066b26069}\index{guia2\_ej1.c@{guia2\_ej1.c}!led3\_task\_handle@{led3\_task\_handle}}
+\index{led3\_task\_handle@{led3\_task\_handle}!guia2\_ej1.c@{guia2\_ej1.c}}
+\doxysubsubsection{\texorpdfstring{led3\_task\_handle}{led3\_task\_handle}}
+{\footnotesize\ttfamily \label{guia2__ej1_8c_a1196b6231b2d299f8f7ca58066b26069} 
+Task\+Handle\+\_\+t led3\+\_\+task\+\_\+handle = NULL}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej1_8c_source_l00054}{54}} del archivo \mbox{\hyperlink{guia2__ej1_8c_source}{guia2\+\_\+ej1.\+c}}.
+
+\Hypertarget{guia2__ej1_8c_ab9eb194e87ab859ebe94acb88a799176}\index{guia2\_ej1.c@{guia2\_ej1.c}!medida@{medida}}
+\index{medida@{medida}!guia2\_ej1.c@{guia2\_ej1.c}}
+\doxysubsubsection{\texorpdfstring{medida}{medida}}
+{\footnotesize\ttfamily \label{guia2__ej1_8c_ab9eb194e87ab859ebe94acb88a799176} 
+uint16\+\_\+t medida = 0}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej1_8c_source_l00057}{57}} del archivo \mbox{\hyperlink{guia2__ej1_8c_source}{guia2\+\_\+ej1.\+c}}.
+

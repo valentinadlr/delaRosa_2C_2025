@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="guia1__ej3_8c" kind="file" language="C++">
+    <compoundname>guia1_ej3.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="yes">freertos/FreeRTOS.h</includes>
+    <includes local="yes">freertos/task.h</includes>
+    <includes local="yes">led.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c</label>
+        <link refid="guia1__ej3_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="5">
+        <label>freertos/task.h</label>
+      </node>
+      <node id="6">
+        <label>led.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structleds" prot="public">leds</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="guia1__ej3_8c_1a3df1b4cad09974bfc68858fad7cdc054" prot="public" static="no">
+        <name>CONFIG_BLINK_PERIOD</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="29" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="guia1__ej3_8c_1ad76d1750a6cdeebd506bfcd6752554d2" prot="public" static="no">
+        <name>ON</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="30" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="guia1__ej3_8c_1a29e413f6725b2ba32d165ffaa35b01e5" prot="public" static="no">
+        <name>OFF</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="31" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="guia1__ej3_8c_1a9507a94acc0da8956a17fec9532d45ba" prot="public" static="no">
+        <name>TOGGLE</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="32" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="guia1__ej3_8c_1a8d2a14b15de242ed8eee3504187ce160" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structleds" kindref="compound">leds</ref></type>
+        <definition>struct leds my_leds</definition>
+        <argsstring></argsstring>
+        <name>my_leds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="41" column="9"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="guia1__ej3_8c_1a02c7d0636d1fb129eaa087008d475611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void diagrama_de_flujo</definition>
+        <argsstring>(struct leds *puntero)</argsstring>
+        <name>diagrama_de_flujo</name>
+        <param>
+          <type>struct <ref refid="structleds" kindref="compound">leds</ref> *</type>
+          <declname>puntero</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="45" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="45" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="guia1__ej3_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void app_main</definition>
+        <argsstring>(void)</argsstring>
+        <name>app_main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="87" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="87" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*==================[inclusions]=============================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;freertos/FreeRTOS.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;freertos/task.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;led.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*==================[macros<sp/>and<sp/>definitions]=================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="guia1__ej3_8c_1a3df1b4cad09974bfc68858fad7cdc054" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_BLINK_PERIOD<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="guia1__ej3_8c_1ad76d1750a6cdeebd506bfcd6752554d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ON<sp/>1<sp/></highlight><highlight class="comment">//<sp/>nos<sp/>conviene<sp/>definir<sp/>un<sp/>estado<sp/>entero<sp/>para<sp/>el<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="guia1__ej3_8c_1a29e413f6725b2ba32d165ffaa35b01e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OFF<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="guia1__ej3_8c_1a9507a94acc0da8956a17fec9532d45ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TOGGLE<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*==================[internal<sp/>data<sp/>definition]===============================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="structleds" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structleds" kindref="compound">leds</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="structleds_1a37e90f5e3bd99fac2021fb3a326607d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structleds_1a37e90f5e3bd99fac2021fb3a326607d4" kindref="member">mode</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ON,<sp/>OFF,<sp/>TOGGLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>número<sp/>de<sp/>LED<sp/>a<sp/>controlar</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="structleds_1a828654982ba6d0a001810d6dd6dc8e52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structleds_1a828654982ba6d0a001810d6dd6dc8e52" kindref="member">n_ciclos</ref>;<sp/></highlight><highlight class="comment">//<sp/>cant.<sp/>de<sp/>ciclos<sp/>de<sp/>encendido/apagado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structleds_1a4f9278c1438b58276522156f95c2a669" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structleds_1a4f9278c1438b58276522156f95c2a669" kindref="member">periodo</ref>;<sp/></highlight><highlight class="comment">//<sp/>tiempo<sp/>de<sp/>cada<sp/>ciclo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="guia1__ej3_8c_1a8d2a14b15de242ed8eee3504187ce160" refkind="member"><highlight class="normal">}<sp/><ref refid="guia1__ej3_8c_1a8d2a14b15de242ed8eee3504187ce160" kindref="member">my_leds</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*==================[internal<sp/>functions<sp/>declaration]=========================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*==================[external<sp/>functions<sp/>definition]==========================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="guia1__ej3_8c_1a02c7d0636d1fb129eaa087008d475611" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia1__ej3_8c_1a02c7d0636d1fb129eaa087008d475611" kindref="member">diagrama_de_flujo</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structleds" kindref="compound">leds</ref><sp/>*puntero)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>mode<sp/>=<sp/>ON<sp/>:<sp/>si<sp/>if<sp/>n_led<sp/>=<sp/>1<sp/>si<sp/>..</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1a37e90f5e3bd99fac2021fb3a326607d4" kindref="member">mode</ref><sp/>==<sp/><ref refid="guia1__ej3_8c_1ad76d1750a6cdeebd506bfcd6752554d2" kindref="member">ON</ref>)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_1);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_2);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_3);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>mode<sp/>=<sp/>OFF<sp/>:<sp/>si<sp/>if<sp/>n_led<sp/>=<sp/>1<sp/>si<sp/>..</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1a37e90f5e3bd99fac2021fb3a326607d4" kindref="member">mode</ref><sp/>==<sp/><ref refid="guia1__ej3_8c_1a29e413f6725b2ba32d165ffaa35b01e5" kindref="member">OFF</ref>)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOff(LED_1);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOff(LED_2);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOff(LED_3);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>toggle<sp/>=<sp/>permite<sp/>cambiar<sp/>entre<sp/>dos<sp/>opciones<sp/>on/off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1a37e90f5e3bd99fac2021fb3a326607d4" kindref="member">mode</ref><sp/>==<sp/><ref refid="guia1__ej3_8c_1a9507a94acc0da8956a17fec9532d45ba" kindref="member">TOGGLE</ref>)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>puntero-&gt;<ref refid="structleds_1a828654982ba6d0a001810d6dd6dc8e52" kindref="member">n_ciclos</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedToggle(LED_1);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedToggle(LED_2);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(puntero-&gt;<ref refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" kindref="member">n_led</ref><sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedToggle(LED_3);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>puntero-&gt;<ref refid="structleds_1a4f9278c1438b58276522156f95c2a669" kindref="member">periodo</ref><sp/>/<sp/><ref refid="guia1__ej3_8c_1a3df1b4cad09974bfc68858fad7cdc054" kindref="member">CONFIG_BLINK_PERIOD</ref>;<sp/>j++)<sp/></highlight><highlight class="comment">//<sp/>yo<sp/>le<sp/>paso<sp/>un<sp/>periodo<sp/>que<sp/>lo<sp/>divide<sp/>por<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vTaskDelay(<ref refid="guia1__ej3_8c_1a3df1b4cad09974bfc68858fad7cdc054" kindref="member">CONFIG_BLINK_PERIOD</ref><sp/>/<sp/>portTICK_PERIOD_MS);<sp/></highlight><highlight class="comment">//<sp/>100/1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="guia1__ej3_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia1__ej3_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" kindref="member">app_main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>LedsInit();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>acá<sp/>le<sp/>pasamos<sp/>los<sp/>datos<sp/>que<sp/>queremos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia1__ej3_8c_1a8d2a14b15de242ed8eee3504187ce160" kindref="member">my_leds</ref>.n_led<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia1__ej3_8c_1a8d2a14b15de242ed8eee3504187ce160" kindref="member">my_leds</ref>.n_ciclos<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia1__ej3_8c_1a8d2a14b15de242ed8eee3504187ce160" kindref="member">my_leds</ref>.periodo<sp/>=<sp/>500;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia1__ej3_8c_1a8d2a14b15de242ed8eee3504187ce160" kindref="member">my_leds</ref>.mode<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia1__ej3_8c_1a02c7d0636d1fb129eaa087008d475611" kindref="member">diagrama_de_flujo</ref>(&amp;<ref refid="guia1__ej3_8c_1a8d2a14b15de242ed8eee3504187ce160" kindref="member">my_leds</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vTaskDelay(<ref refid="guia1__ej3_8c_1a3df1b4cad09974bfc68858fad7cdc054" kindref="member">CONFIG_BLINK_PERIOD</ref><sp/>/<sp/>portTICK_PERIOD_MS);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">/*==================[end<sp/>of<sp/>file]============================================*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c"/>
+  </compounddef>
+</doxygen>

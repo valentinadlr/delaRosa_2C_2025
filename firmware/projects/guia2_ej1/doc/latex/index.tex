@@ -1,0 +1,60 @@
+\chapter{Medición de distancia con sensor ultrasónico y visualización }
+\hypertarget{index}{}\label{index}\index{Medición de distancia con sensor ultrasónico y visualización@{Medición de distancia con sensor ultrasónico y visualización}}
+\hypertarget{index_genDesc}{}\doxysection{\texorpdfstring{General Description}{General Description}}\label{index_genDesc}
+Este programa implementa un sistema con el microcontrolador ESP32 que mide distancias utilizando el sensor ultrasónico HC-\/\+SR04 y las muestra en un display LCD ITS-\/\+E0803. ~\newline
+ Además, el estado de la medición se indica mediante LEDs que se encienden en función del rango de distancia. ~\newline
+
+
+El sistema permite\+:
+\begin{DoxyItemize}
+\item Iniciar/detener la medición mediante la tecla 1. ~\newline
+
+\item Congelar (hold) o continuar actualizando el valor mostrado en el display mediante la tecla 2. ~\newline
+
+\item Visualizar la distancia en el display LCD. ~\newline
+
+\item Indicar por LEDs la magnitud de la distancia medida\+:
+\begin{DoxyItemize}
+\item Distancia \texorpdfstring{$<$}{<} 10 cm → todos los LEDs apagados. ~\newline
+
+\item Distancia 10–20 cm → LED1 encendido. ~\newline
+
+\item Distancia 20–30 cm → LED1 y LED2 encendidos. ~\newline
+
+\item Distancia \texorpdfstring{$>$}{>} 30 cm → LED1, LED2 y LED3 encendidos. ~\newline
+
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_hardConn}{}\doxysection{\texorpdfstring{Hardware Connection}{Hardware Connection}}\label{index_hardConn}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ EDU-\/\+CIAA-\/\+NXP  }&\cellcolor{\tableheadbgcolor}\textbf{ PERIFÉ\+RICO  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ EDU-\/\+CIAA-\/\+NXP  }&\cellcolor{\tableheadbgcolor}\textbf{ PERIFÉ\+RICO  }\\\cline{1-2}
+\endhead
+\PBS\centering GPIO\+\_\+3  &ECHO  \\\cline{1-2}
+\PBS\centering GPIO\+\_\+2  &TRIGGER  \\\cline{1-2}
+\PBS\centering +5V  &+5V  \\\cline{1-2}
+\PBS\centering GND  &GND  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{index_changelog}{}\doxysection{\texorpdfstring{Changelog}{Changelog}}\label{index_changelog}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Date  }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Date  }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+\PBS\centering 10/09/2025  &Document creation  \\\cline{1-2}
+\end{longtabu}
+
+
+\begin{DoxyAuthor}{Autor}
+Valentina de la Rosa (\href{mailto:valentina.delarosa@ingenieria.uner.edu.ar}{\texttt{valentina.\+delarosa@ingenieria.\+uner.\+edu.\+ar}}) 
+\end{DoxyAuthor}

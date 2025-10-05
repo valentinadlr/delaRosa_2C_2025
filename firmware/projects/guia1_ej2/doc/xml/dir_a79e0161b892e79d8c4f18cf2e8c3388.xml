@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="dir_a79e0161b892e79d8c4f18cf2e8c3388" kind="dir">
+    <compoundname>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej2</compoundname>
+    <innerdir refid="dir_4b762876e76cfc1791bff6d5a1caa632">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej2/build</innerdir>
+    <innerdir refid="dir_b728fb3771ac6e21d88d697c6f993aa2">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej2/main</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Este proyecto sirve como platilla para crear nuevos proyectos siguiendo el instructivo Proyecto Nuevo. </para>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej2/"/>
+  </compounddef>
+</doxygen>

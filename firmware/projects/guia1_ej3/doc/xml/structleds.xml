@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="structleds" kind="struct" language="C++" prot="public">
+    <compoundname>leds</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structleds_1a37e90f5e3bd99fac2021fb3a326607d4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <qualifiedname>leds::mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="36" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structleds_1aac77d1ca573959e4a5e2956b94c9e899" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t n_led</definition>
+        <argsstring></argsstring>
+        <name>n_led</name>
+        <qualifiedname>leds::n_led</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="37" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structleds_1a828654982ba6d0a001810d6dd6dc8e52" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t n_ciclos</definition>
+        <argsstring></argsstring>
+        <name>n_ciclos</name>
+        <qualifiedname>leds::n_ciclos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="38" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structleds_1a4f9278c1438b58276522156f95c2a669" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t periodo</definition>
+        <argsstring></argsstring>
+        <name>periodo</name>
+        <qualifiedname>leds::periodo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="39" column="10" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" line="34" column="1" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c" bodystart="35" bodyend="41"/>
+    <listofallmembers>
+      <member refid="structleds_1a37e90f5e3bd99fac2021fb3a326607d4" prot="public" virt="non-virtual"><scope>leds</scope><name>mode</name></member>
+      <member refid="structleds_1a828654982ba6d0a001810d6dd6dc8e52" prot="public" virt="non-virtual"><scope>leds</scope><name>n_ciclos</name></member>
+      <member refid="structleds_1aac77d1ca573959e4a5e2956b94c9e899" prot="public" virt="non-virtual"><scope>leds</scope><name>n_led</name></member>
+      <member refid="structleds_1a4f9278c1438b58276522156f95c2a669" prot="public" virt="non-virtual"><scope>leds</scope><name>periodo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

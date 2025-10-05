@@ -1,0 +1,183 @@
+.TH "C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" 3 "Guía 2 - Ejercicio 3" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdint\&.h>\fP
+.br
+\fR#include <stdbool\&.h>\fP
+.br
+\fR#include 'freertos/FreeRTOS\&.h'\fP
+.br
+\fR#include 'freertos/task\&.h'\fP
+.br
+\fR#include 'led\&.h'\fP
+.br
+\fR#include 'hc_sr04\&.h'\fP
+.br
+\fR#include 'gpio_mcu\&.h'\fP
+.br
+\fR#include 'switch\&.h'\fP
+.br
+\fR#include 'lcditse0803\&.h'\fP
+.br
+\fR#include 'timer_mcu\&.h'\fP
+.br
+\fR#include 'uart_mcu\&.h'\fP
+.br
+\fR#include 'esp_mac\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void \fBTecla1\fP (void)"
+.br
+.RI "Callback de la tecla 1 (SW1): alterna el estado de medición\&. "
+.ti -1c
+.RI "void \fBTecla2\fP (void)"
+.br
+.RI "Callback de la tecla 2 (SW2): alterna el modo hold del display\&. "
+.ti -1c
+.RI "void \fBFuncTimerA\fP (void *param)"
+.br
+.RI "Función del temporizador A\&. Notifica a las tareas principales\&. "
+.ti -1c
+.RI "void \fBUART\fP (void *pvParameters)"
+.br
+.RI "Rutina de interrupción UART\&. Lee un byte y ejecuta comandos de control\&. "
+.ti -1c
+.RI "void \fBMedir_UART\fP ()"
+.br
+.RI "Envía la distancia medida al puerto serie en formato: "
+.ti -1c
+.RI "void \fBapp_main\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "TaskHandle_t \fBmedir_task_handle\fP = NULL"
+.br
+.ti -1c
+.RI "TaskHandle_t \fBleds_task_handle\fP = NULL"
+.br
+.ti -1c
+.RI "TaskHandle_t \fBdisplay_task_handle\fP = NULL"
+.br
+.ti -1c
+.RI "TaskHandle_t \fBuart_task_handle\fP = NULL"
+.br
+.ti -1c
+.RI "bool \fBact_med\fP = false"
+.br
+.ti -1c
+.RI "bool \fBhold\fP = false"
+.br
+.ti -1c
+.RI "uint16_t \fBmedida\fP = 0"
+.br
+.ti -1c
+.RI "int \fBperiodoUS\fP = 1000000"
+.br
+.in -1c
+.SH "Documentación de funciones"
+.PP 
+.SS "void app_main (void )"
+
+.PP
+Definición en la línea \fB206\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "void FuncTimerA (void * param)"
+
+.PP
+Función del temporizador A\&. Notifica a las tareas principales\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIparam\fP Puntero genérico (no utilizado)\&. 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB68\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "void Medir_UART ()"
+
+.PP
+Envía la distancia medida al puerto serie en formato: \fRXXX cm\\r\\n\fP 
+.PP
+Definición en la línea \fB106\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "void Tecla1 (void )"
+
+.PP
+Callback de la tecla 1 (SW1): alterna el estado de medición\&. 
+.PP
+Definición en la línea \fB51\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "void Tecla2 (void )"
+
+.PP
+Callback de la tecla 2 (SW2): alterna el modo hold del display\&. 
+.PP
+Definición en la línea \fB59\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "void UART (void * pvParameters)"
+
+.PP
+Rutina de interrupción UART\&. Lee un byte y ejecuta comandos de control\&. Comandos:
+.IP "\(bu" 2
+'O': alterna medición\&.
+.IP "\(bu" 2
+'H': alterna modo hold\&.
+.PP
+
+.PP
+\fBParámetros\fP
+.RS 4
+\fIpvParameters\fP Parámetros de la tarea (no utilizado)\&. 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB84\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SH "Documentación de variables"
+.PP 
+.SS "bool act_med = false"
+
+.PP
+Definición en la línea \fB43\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "TaskHandle_t display_task_handle = NULL"
+
+.PP
+Definición en la línea \fB41\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "bool hold = false"
+
+.PP
+Definición en la línea \fB44\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "TaskHandle_t leds_task_handle = NULL"
+
+.PP
+Definición en la línea \fB40\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "uint16_t medida = 0"
+
+.PP
+Definición en la línea \fB45\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "TaskHandle_t medir_task_handle = NULL"
+
+.PP
+Definición en la línea \fB39\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "int periodoUS = 1000000"
+
+.PP
+Definición en la línea \fB46\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SS "TaskHandle_t uart_task_handle = NULL"
+
+.PP
+Definición en la línea \fB42\fP del archivo \fBguia2_ej3\&.c\fP\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Guía 2 - Ejercicio 3 del código fuente\&.

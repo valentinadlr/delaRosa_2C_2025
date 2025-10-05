@@ -1,0 +1,151 @@
+.TH "C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej2/main/guia2_ej2.c" 3 "Guía 2 - Ejercicio 2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej2/main/guia2_ej2.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdint\&.h>\fP
+.br
+\fR#include <stdbool\&.h>\fP
+.br
+\fR#include 'freertos/FreeRTOS\&.h'\fP
+.br
+\fR#include 'freertos/task\&.h'\fP
+.br
+\fR#include 'led\&.h'\fP
+.br
+\fR#include 'hc_sr04\&.h'\fP
+.br
+\fR#include 'gpio_mcu\&.h'\fP
+.br
+\fR#include 'switch\&.h'\fP
+.br
+\fR#include 'lcditse0803\&.h'\fP
+.br
+\fR#include 'timer_mcu\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void \fBTecla1\fP (void)"
+.br
+.RI "Rutina de interrupción para la tecla 1\&. "
+.ti -1c
+.RI "void \fBTecla2\fP (void)"
+.br
+.RI "Rutina de interrupción para la tecla 2\&. "
+.ti -1c
+.RI "void \fBFuncTimerA\fP (void *param)"
+.br
+.RI "Callback del timer A\&. "
+.ti -1c
+.RI "void \fBapp_main\fP (void)"
+.br
+.RI "Función principal de la aplicación\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "TaskHandle_t \fBmedir_task_handle\fP = NULL"
+.br
+.ti -1c
+.RI "TaskHandle_t \fBleds_task_handle\fP = NULL"
+.br
+.ti -1c
+.RI "TaskHandle_t \fBdisplay_task_handle\fP = NULL"
+.br
+.ti -1c
+.RI "bool \fBact_med\fP = false"
+.br
+.ti -1c
+.RI "bool \fBhold\fP = false"
+.br
+.ti -1c
+.RI "uint16_t \fBmedida\fP = 0"
+.br
+.ti -1c
+.RI "int \fBperiodoUS\fP = 1000000"
+.br
+.in -1c
+.SH "Documentación de funciones"
+.PP 
+.SS "void app_main (void )"
+
+.PP
+Función principal de la aplicación\&. Inicializa periféricos (LEDs, switches, HC-SR04, LCD, timer)\&. Configura interrupciones para las teclas\&. Crea las tareas FreeRTOS:
+.IP "\(bu" 2
+Medir
+.IP "\(bu" 2
+LEDs
+.IP "\(bu" 2
+Display Inicia el timer A que sincroniza la ejecución periódica de dichas tareas\&. 
+.PP
+
+.PP
+Definición en la línea \fB179\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "void FuncTimerA (void * param)"
+
+.PP
+Callback del timer A\&. Envía notificaciones a las tareas de medición, LEDs y display para que se ejecuten\&.
+
+.PP
+\fBParámetros\fP
+.RS 4
+\fIparam\fP Parámetro de usuario (no utilizado)\&. 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB76\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "void Tecla1 (void )"
+
+.PP
+Rutina de interrupción para la tecla 1\&. Alterna el flag \fRact_med\fP para iniciar o detener la medición\&. 
+.PP
+Definición en la línea \fB56\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "void Tecla2 (void )"
+
+.PP
+Rutina de interrupción para la tecla 2\&. Alterna el flag \fRhold\fP para congelar o liberar el valor mostrado en el display\&. 
+.PP
+Definición en la línea \fB65\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SH "Documentación de variables"
+.PP 
+.SS "bool act_med = false"
+
+.PP
+Definición en la línea \fB46\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "TaskHandle_t display_task_handle = NULL"
+
+.PP
+Definición en la línea \fB45\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "bool hold = false"
+
+.PP
+Definición en la línea \fB47\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "TaskHandle_t leds_task_handle = NULL"
+
+.PP
+Definición en la línea \fB44\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "uint16_t medida = 0"
+
+.PP
+Definición en la línea \fB48\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "TaskHandle_t medir_task_handle = NULL"
+
+.PP
+Definición en la línea \fB43\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SS "int periodoUS = 1000000"
+
+.PP
+Definición en la línea \fB49\fP del archivo \fBguia2_ej2\&.c\fP\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Guía 2 - Ejercicio 2 del código fuente\&.

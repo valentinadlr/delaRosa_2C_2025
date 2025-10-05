@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['off_0',['OFF',['../guia1__ej3_8c.html#a29e413f6725b2ba32d165ffaa35b01e5',1,'guia1_ej3.c']]],
+  ['on_1',['ON',['../guia1__ej3_8c.html#ad76d1750a6cdeebd506bfcd6752554d2',1,'guia1_ej3.c']]],
+  ['operación_2',['Control de LEDs con modos de operación',['../index.html',1,'']]]
+];

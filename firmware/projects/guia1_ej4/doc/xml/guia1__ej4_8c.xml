@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="guia1__ej4_8c" kind="file" language="C++">
+    <compoundname>guia1_ej4.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdint.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c</label>
+        <link refid="guia1__ej4_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="guia1__ej4_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t convertToBcdArray</definition>
+        <argsstring>(uint32_t data, uint8_t digits, uint8_t *bcd_number)</argsstring>
+        <name>convertToBcdArray</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>digits</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>bcd_number</declname>
+        </param>
+        <briefdescription>
+<para>Convierte un número entero de 32 bits a formato BCD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número entero a convertir. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">digits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cantidad de dígitos de salida. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">bcd_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Puntero al arreglo donde se almacenará el resultado en BCD.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 si la conversión fue exitosa.</para>
+</simplesect>
+<simplesect kind="note"><para>Los dígitos se guardan en el arreglo en orden, de izquierda a derecha. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c" line="42" column="9" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c" bodystart="42" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="guia1__ej4_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void app_main</definition>
+        <argsstring>(void)</argsstring>
+        <name>app_main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Función principal de la aplicación. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Declara un número entero a convertir. <linebreak/>
+</para>
+</listitem><listitem><para>Llama a <ref refid="guia1__ej4_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" kindref="member">convertToBcdArray</ref> para obtener su representación en BCD. <linebreak/>
+</para>
+</listitem><listitem><para>Imprime el resultado en la consola. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c" line="60" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c" bodystart="60" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*==================[inclusions]=============================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*==================[macros<sp/>and<sp/>definitions]=================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*==================[internal<sp/>data<sp/>definition]===============================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*==================[internal<sp/>functions<sp/>declaration]=========================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="guia1__ej4_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" refkind="member"><highlight class="normal">int8_t<sp/><sp/><ref refid="guia1__ej4_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" kindref="member">convertToBcdArray</ref><sp/>(uint32_t<sp/>data,<sp/>uint8_t<sp/>digits,<sp/>uint8_t<sp/>*<sp/>bcd_number)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>digits<sp/>-<sp/>1;<sp/>i<sp/>&gt;=<sp/>0;<sp/>i--)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcd_number[i]<sp/>=<sp/>data<sp/>%<sp/>10;<sp/><sp/></highlight><highlight class="comment">//<sp/>Guardar<sp/>último<sp/>dígito</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>/=<sp/>10;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*==================[external<sp/>functions<sp/>definition]==========================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="guia1__ej4_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia1__ej4_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" kindref="member">app_main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>numero<sp/>=<sp/>12345;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>arreglo[6];</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia1__ej4_8c_1a52ee2e8838ceab35f8bdc0f4e58a0dac" kindref="member">convertToBcdArray</ref>(numero,<sp/>6,<sp/>arreglo);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Número<sp/>convertido<sp/>a<sp/>BCD:<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%d<sp/>&quot;</highlight><highlight class="normal">,<sp/>arreglo[i]);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">printf(</highlight><highlight class="stringliteral">&quot;/n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">/*==================[end<sp/>of<sp/>file]============================================*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c"/>
+  </compounddef>
+</doxygen>

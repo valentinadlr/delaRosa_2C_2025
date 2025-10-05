@@ -1,0 +1,235 @@
+\doxysection{Referencia del archivo C\+:/\+Repositorios/dela\+Rosa\+\_\+2\+C\+\_\+2025/firmware/projects/guia2\+\_\+ej3/main/guia2\+\_\+ej3.c}
+\hypertarget{guia2__ej3_8c}{}\label{guia2__ej3_8c}\index{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia2\_ej3/main/guia2\_ej3.c@{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia2\_ej3/main/guia2\_ej3.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}led.\+h"{}}\newline
+{\ttfamily \#include "{}hc\+\_\+sr04.\+h"{}}\newline
+{\ttfamily \#include "{}gpio\+\_\+mcu.\+h"{}}\newline
+{\ttfamily \#include "{}switch.\+h"{}}\newline
+{\ttfamily \#include "{}lcditse0803.\+h"{}}\newline
+{\ttfamily \#include "{}timer\+\_\+mcu.\+h"{}}\newline
+{\ttfamily \#include "{}uart\+\_\+mcu.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+mac.\+h"{}}\newline
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{guia2__ej3_8c_abc0fa49d4e5b6933f142b6e937273ccb}{Tecla1}} (void)
+\begin{DoxyCompactList}\small\item\em Callback de la tecla 1 (SW1)\+: alterna el estado de medición. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{guia2__ej3_8c_ab4f43cc73c4122e2a09d720744b72c50}{Tecla2}} (void)
+\begin{DoxyCompactList}\small\item\em Callback de la tecla 2 (SW2)\+: alterna el modo hold del display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{guia2__ej3_8c_afaccfed84cd1498a05ea04a65f1209b1}{Func\+TimerA}} (void \texorpdfstring{$\ast$}{*}param)
+\begin{DoxyCompactList}\small\item\em Función del temporizador A. Notifica a las tareas principales. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{guia2__ej3_8c_ad32962f655aec828bcc030f9d9acb2c9}{UART}} (void \texorpdfstring{$\ast$}{*}pv\+Parameters)
+\begin{DoxyCompactList}\small\item\em Rutina de interrupción UART. Lee un byte y ejecuta comandos de control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{guia2__ej3_8c_a5121c6b0aa7ff8709d335c065ddac2e3}{Medir\+\_\+\+UART}} ()
+\begin{DoxyCompactList}\small\item\em Envía la distancia medida al puerto serie en formato\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{guia2__ej3_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\+\_\+main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{guia2__ej3_8c_a2b0cb40d7a31ce7e8b3f906fd55df312}{medir\+\_\+task\+\_\+handle}} = NULL
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{guia2__ej3_8c_a23fa2e6a8b0cbaf464c822d101153441}{leds\+\_\+task\+\_\+handle}} = NULL
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{guia2__ej3_8c_abaf073dd4f91187228bc62d1177a72e4}{display\+\_\+task\+\_\+handle}} = NULL
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{guia2__ej3_8c_a4e4967ac70f1e8a89b2fea62027a968c}{uart\+\_\+task\+\_\+handle}} = NULL
+\item 
+bool \mbox{\hyperlink{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}{act\+\_\+med}} = false
+\item 
+bool \mbox{\hyperlink{guia2__ej3_8c_af0129e079b57e897edf00f22cc25f3d4}{hold}} = false
+\item 
+uint16\+\_\+t \mbox{\hyperlink{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}{medida}} = 0
+\item 
+int \mbox{\hyperlink{guia2__ej3_8c_ac5fe4e48184e8e9f39fe85be5c91e77d}{periodo\+US}} = 1000000
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{guia2__ej3_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{guia2__ej3_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}\index{guia2\_ej3.c@{guia2\_ej3.c}!app\_main@{app\_main}}
+\index{app\_main@{app\_main}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{app\_main()}{app\_main()}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_a630544a7f0a2cc40d8a7fefab7e2fe70} 
+void app\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00206}{206}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_afaccfed84cd1498a05ea04a65f1209b1}\index{guia2\_ej3.c@{guia2\_ej3.c}!FuncTimerA@{FuncTimerA}}
+\index{FuncTimerA@{FuncTimerA}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{FuncTimerA()}{FuncTimerA()}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_afaccfed84cd1498a05ea04a65f1209b1} 
+void Func\+TimerA (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{param}{}\end{DoxyParamCaption})}
+
+
+
+Función del temporizador A. Notifica a las tareas principales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em param} & Puntero genérico (no utilizado). \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00068}{68}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_a5121c6b0aa7ff8709d335c065ddac2e3}\index{guia2\_ej3.c@{guia2\_ej3.c}!Medir\_UART@{Medir\_UART}}
+\index{Medir\_UART@{Medir\_UART}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{Medir\_UART()}{Medir\_UART()}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_a5121c6b0aa7ff8709d335c065ddac2e3} 
+void Medir\+\_\+\+UART (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Envía la distancia medida al puerto serie en formato\+: 
+
+{\ttfamily XXX cm\textbackslash{}r\textbackslash{}n} 
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00106}{106}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_abc0fa49d4e5b6933f142b6e937273ccb}\index{guia2\_ej3.c@{guia2\_ej3.c}!Tecla1@{Tecla1}}
+\index{Tecla1@{Tecla1}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{Tecla1()}{Tecla1()}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_abc0fa49d4e5b6933f142b6e937273ccb} 
+void Tecla1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback de la tecla 1 (SW1)\+: alterna el estado de medición. 
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00051}{51}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_ab4f43cc73c4122e2a09d720744b72c50}\index{guia2\_ej3.c@{guia2\_ej3.c}!Tecla2@{Tecla2}}
+\index{Tecla2@{Tecla2}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{Tecla2()}{Tecla2()}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_ab4f43cc73c4122e2a09d720744b72c50} 
+void Tecla2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback de la tecla 2 (SW2)\+: alterna el modo hold del display. 
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00059}{59}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_ad32962f655aec828bcc030f9d9acb2c9}\index{guia2\_ej3.c@{guia2\_ej3.c}!UART@{UART}}
+\index{UART@{UART}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{UART()}{UART()}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_ad32962f655aec828bcc030f9d9acb2c9} 
+void UART (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{pv\+Parameters}{}\end{DoxyParamCaption})}
+
+
+
+Rutina de interrupción UART. Lee un byte y ejecuta comandos de control. 
+
+Comandos\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}O\textquotesingle{}\+: alterna medición.
+\item \textquotesingle{}H\textquotesingle{}\+: alterna modo hold.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pv\+Parameters} & Parámetros de la tarea (no utilizado). \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00084}{84}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+
+
+\label{doc-var-members}
+\Hypertarget{guia2__ej3_8c_doc-var-members}
+\doxysubsection{Documentación de variables}
+\Hypertarget{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078}\index{guia2\_ej3.c@{guia2\_ej3.c}!act\_med@{act\_med}}
+\index{act\_med@{act\_med}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{act\_med}{act\_med}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_acdb1d9e75320b05630b724455b996078} 
+bool act\+\_\+med = false}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00043}{43}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_abaf073dd4f91187228bc62d1177a72e4}\index{guia2\_ej3.c@{guia2\_ej3.c}!display\_task\_handle@{display\_task\_handle}}
+\index{display\_task\_handle@{display\_task\_handle}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{display\_task\_handle}{display\_task\_handle}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_abaf073dd4f91187228bc62d1177a72e4} 
+Task\+Handle\+\_\+t display\+\_\+task\+\_\+handle = NULL}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00041}{41}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_af0129e079b57e897edf00f22cc25f3d4}\index{guia2\_ej3.c@{guia2\_ej3.c}!hold@{hold}}
+\index{hold@{hold}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{hold}{hold}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_af0129e079b57e897edf00f22cc25f3d4} 
+bool hold = false}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00044}{44}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_a23fa2e6a8b0cbaf464c822d101153441}\index{guia2\_ej3.c@{guia2\_ej3.c}!leds\_task\_handle@{leds\_task\_handle}}
+\index{leds\_task\_handle@{leds\_task\_handle}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{leds\_task\_handle}{leds\_task\_handle}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_a23fa2e6a8b0cbaf464c822d101153441} 
+Task\+Handle\+\_\+t leds\+\_\+task\+\_\+handle = NULL}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00040}{40}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176}\index{guia2\_ej3.c@{guia2\_ej3.c}!medida@{medida}}
+\index{medida@{medida}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{medida}{medida}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_ab9eb194e87ab859ebe94acb88a799176} 
+uint16\+\_\+t medida = 0}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00045}{45}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_a2b0cb40d7a31ce7e8b3f906fd55df312}\index{guia2\_ej3.c@{guia2\_ej3.c}!medir\_task\_handle@{medir\_task\_handle}}
+\index{medir\_task\_handle@{medir\_task\_handle}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{medir\_task\_handle}{medir\_task\_handle}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_a2b0cb40d7a31ce7e8b3f906fd55df312} 
+Task\+Handle\+\_\+t medir\+\_\+task\+\_\+handle = NULL}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00039}{39}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_ac5fe4e48184e8e9f39fe85be5c91e77d}\index{guia2\_ej3.c@{guia2\_ej3.c}!periodoUS@{periodoUS}}
+\index{periodoUS@{periodoUS}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{periodoUS}{periodoUS}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_ac5fe4e48184e8e9f39fe85be5c91e77d} 
+int periodo\+US = 1000000}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00046}{46}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia2__ej3_8c_a4e4967ac70f1e8a89b2fea62027a968c}\index{guia2\_ej3.c@{guia2\_ej3.c}!uart\_task\_handle@{uart\_task\_handle}}
+\index{uart\_task\_handle@{uart\_task\_handle}!guia2\_ej3.c@{guia2\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{uart\_task\_handle}{uart\_task\_handle}}
+{\footnotesize\ttfamily \label{guia2__ej3_8c_a4e4967ac70f1e8a89b2fea62027a968c} 
+Task\+Handle\+\_\+t uart\+\_\+task\+\_\+handle = NULL}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia2__ej3_8c_source_l00042}{42}} del archivo \mbox{\hyperlink{guia2__ej3_8c_source}{guia2\+\_\+ej3.\+c}}.
+

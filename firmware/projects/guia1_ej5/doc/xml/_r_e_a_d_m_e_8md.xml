@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Template</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Este<sp/>proyecto<sp/>sirve<sp/>como<sp/>platilla<sp/>para<sp/>crear<sp/>nuevos<sp/>proyectos<sp/>siguiendo<sp/>el<sp/>instructivo<sp/>[Proyecto<sp/>Nuevo](../../../documentación/proyecto_nuevo.md).</highlight></codeline>
+    </programlisting>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/README.md"/>
+  </compounddef>
+</doxygen>

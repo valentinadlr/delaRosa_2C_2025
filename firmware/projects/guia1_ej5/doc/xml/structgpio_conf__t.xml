@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="structgpio_conf__t" kind="struct" language="C++" prot="public">
+    <compoundname>gpioConf_t</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structgpio_conf__t_1aca3d4c5920a3f389dfded4a9726473a9" prot="public" static="no" mutable="no">
+        <type>gpio_t</type>
+        <definition>gpio_t pin</definition>
+        <argsstring></argsstring>
+        <name>pin</name>
+        <qualifiedname>gpioConf_t::pin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" line="47" column="12" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgpio_conf__t_1a8f9801ec3144d1e53252a902330c58a1" prot="public" static="no" mutable="no">
+        <type>io_t</type>
+        <definition>io_t dir</definition>
+        <argsstring></argsstring>
+        <name>dir</name>
+        <qualifiedname>gpioConf_t::dir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" line="48" column="10" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Estructura de configuración de un pin GPIO. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contiene el número de pin y la dirección de operación (entrada/salida). </para>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" line="45" column="1" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" bodystart="46" bodyend="49"/>
+    <listofallmembers>
+      <member refid="structgpio_conf__t_1a8f9801ec3144d1e53252a902330c58a1" prot="public" virt="non-virtual"><scope>gpioConf_t</scope><name>dir</name></member>
+      <member refid="structgpio_conf__t_1aca3d4c5920a3f389dfded4a9726473a9" prot="public" virt="non-virtual"><scope>gpioConf_t</scope><name>pin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

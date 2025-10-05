@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="dir_1b659d2eb12f98d9087b1d669f2d43eb" kind="dir">
+    <compoundname>C:/Repositorios/delaRosa_2C_2025</compoundname>
+    <innerdir refid="dir_830d8caa53a860f3611e9e38a7d52734">C:/Repositorios/delaRosa_2C_2025/firmware</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/"/>
+  </compounddef>
+</doxygen>

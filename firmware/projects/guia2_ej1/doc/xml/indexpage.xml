@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Medición de distancia con sensor ultrasónico y visualización</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1genDesc">
+<title>General Description</title><para>Este programa implementa un sistema con el microcontrolador ESP32 que mide distancias utilizando el sensor ultrasónico HC-SR04 y las muestra en un display LCD ITS-E0803. <linebreak/>
+ Además, el estado de la medición se indica mediante LEDs que se encienden en función del rango de distancia. <linebreak/>
+</para>
+<para>El sistema permite:<itemizedlist>
+<listitem><para>Iniciar/detener la medición mediante la tecla 1. <linebreak/>
+</para>
+</listitem><listitem><para>Congelar (hold) o continuar actualizando el valor mostrado en el display mediante la tecla 2. <linebreak/>
+</para>
+</listitem><listitem><para>Visualizar la distancia en el display LCD. <linebreak/>
+</para>
+</listitem><listitem><para>Indicar por LEDs la magnitud de la distancia medida:<itemizedlist>
+<listitem><para>Distancia &lt; 10 cm → todos los LEDs apagados. <linebreak/>
+</para>
+</listitem><listitem><para>Distancia 10–20 cm → LED1 encendido. <linebreak/>
+</para>
+</listitem><listitem><para>Distancia 20–30 cm → LED1 y LED2 encendidos. <linebreak/>
+</para>
+</listitem><listitem><para>Distancia &gt; 30 cm → LED1, LED2 y LED3 encendidos. <linebreak/>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1hardConn">
+<title>Hardware Connection</title><para><table rows="5" cols="2"><row>
+<entry thead="yes" align='center'><para>EDU-CIAA-NXP  </para>
+</entry><entry thead="yes" align='left'><para>PERIFÉRICO  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>GPIO_3  </para>
+</entry><entry thead="no" align='left'><para>ECHO  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>GPIO_2  </para>
+</entry><entry thead="no" align='left'><para>TRIGGER  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>+5V  </para>
+</entry><entry thead="no" align='left'><para>+5V  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>GND  </para>
+</entry><entry thead="no" align='left'><para>GND  </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="index_1changelog">
+<title>Changelog</title><para><table rows="2" cols="2"><row>
+<entry thead="yes" align='center'><para>Date  </para>
+</entry><entry thead="yes" align='left'><para>Description  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>10/09/2025  </para>
+</entry><entry thead="no" align='left'><para>Document creation  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="author"><para>Valentina de la Rosa (<ulink url="mailto:valentina.delarosa@ingenieria.uner.edu.ar">valentina.delarosa@ingenieria.uner.edu.ar</ulink>) </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/main/guia2_ej1.c"/>
+  </compounddef>
+</doxygen>

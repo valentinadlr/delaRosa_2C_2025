@@ -1,0 +1,116 @@
+\doxysection{Referencia del archivo C\+:/\+Repositorios/dela\+Rosa\+\_\+2\+C\+\_\+2025/firmware/projects/guia1\+\_\+ej3/main/guia1\+\_\+ej3.c}
+\hypertarget{guia1__ej3_8c}{}\label{guia1__ej3_8c}\index{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej3/main/guia1\_ej3.c@{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej3/main/guia1\_ej3.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}led.\+h"{}}\newline
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structleds}{leds}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{guia1__ej3_8c_a3df1b4cad09974bfc68858fad7cdc054}{CONFIG\+\_\+\+BLINK\+\_\+\+PERIOD}}~100
+\item 
+\#define \mbox{\hyperlink{guia1__ej3_8c_ad76d1750a6cdeebd506bfcd6752554d2}{ON}}~1
+\item 
+\#define \mbox{\hyperlink{guia1__ej3_8c_a29e413f6725b2ba32d165ffaa35b01e5}{OFF}}~2
+\item 
+\#define \mbox{\hyperlink{guia1__ej3_8c_a9507a94acc0da8956a17fec9532d45ba}{TOGGLE}}~3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{guia1__ej3_8c_a02c7d0636d1fb129eaa087008d475611}{diagrama\+\_\+de\+\_\+flujo}} (struct \mbox{\hyperlink{structleds}{leds}} \texorpdfstring{$\ast$}{*}puntero)
+\item 
+void \mbox{\hyperlink{guia1__ej3_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}{app\+\_\+main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structleds}{leds}} \mbox{\hyperlink{guia1__ej3_8c_a8d2a14b15de242ed8eee3504187ce160}{my\+\_\+leds}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{guia1__ej3_8c_doc-define-members}
+\doxysubsection{Documentación de «define»}
+\Hypertarget{guia1__ej3_8c_a3df1b4cad09974bfc68858fad7cdc054}\index{guia1\_ej3.c@{guia1\_ej3.c}!CONFIG\_BLINK\_PERIOD@{CONFIG\_BLINK\_PERIOD}}
+\index{CONFIG\_BLINK\_PERIOD@{CONFIG\_BLINK\_PERIOD}!guia1\_ej3.c@{guia1\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_BLINK\_PERIOD}{CONFIG\_BLINK\_PERIOD}}
+{\footnotesize\ttfamily \label{guia1__ej3_8c_a3df1b4cad09974bfc68858fad7cdc054} 
+\#define CONFIG\+\_\+\+BLINK\+\_\+\+PERIOD~100}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej3_8c_source_l00029}{29}} del archivo \mbox{\hyperlink{guia1__ej3_8c_source}{guia1\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia1__ej3_8c_a29e413f6725b2ba32d165ffaa35b01e5}\index{guia1\_ej3.c@{guia1\_ej3.c}!OFF@{OFF}}
+\index{OFF@{OFF}!guia1\_ej3.c@{guia1\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{OFF}{OFF}}
+{\footnotesize\ttfamily \label{guia1__ej3_8c_a29e413f6725b2ba32d165ffaa35b01e5} 
+\#define OFF~2}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej3_8c_source_l00031}{31}} del archivo \mbox{\hyperlink{guia1__ej3_8c_source}{guia1\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia1__ej3_8c_ad76d1750a6cdeebd506bfcd6752554d2}\index{guia1\_ej3.c@{guia1\_ej3.c}!ON@{ON}}
+\index{ON@{ON}!guia1\_ej3.c@{guia1\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{ON}{ON}}
+{\footnotesize\ttfamily \label{guia1__ej3_8c_ad76d1750a6cdeebd506bfcd6752554d2} 
+\#define ON~1}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej3_8c_source_l00030}{30}} del archivo \mbox{\hyperlink{guia1__ej3_8c_source}{guia1\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia1__ej3_8c_a9507a94acc0da8956a17fec9532d45ba}\index{guia1\_ej3.c@{guia1\_ej3.c}!TOGGLE@{TOGGLE}}
+\index{TOGGLE@{TOGGLE}!guia1\_ej3.c@{guia1\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{TOGGLE}{TOGGLE}}
+{\footnotesize\ttfamily \label{guia1__ej3_8c_a9507a94acc0da8956a17fec9532d45ba} 
+\#define TOGGLE~3}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej3_8c_source_l00032}{32}} del archivo \mbox{\hyperlink{guia1__ej3_8c_source}{guia1\+\_\+ej3.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{guia1__ej3_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{guia1__ej3_8c_a630544a7f0a2cc40d8a7fefab7e2fe70}\index{guia1\_ej3.c@{guia1\_ej3.c}!app\_main@{app\_main}}
+\index{app\_main@{app\_main}!guia1\_ej3.c@{guia1\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{app\_main()}{app\_main()}}
+{\footnotesize\ttfamily \label{guia1__ej3_8c_a630544a7f0a2cc40d8a7fefab7e2fe70} 
+void app\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej3_8c_source_l00087}{87}} del archivo \mbox{\hyperlink{guia1__ej3_8c_source}{guia1\+\_\+ej3.\+c}}.
+
+\Hypertarget{guia1__ej3_8c_a02c7d0636d1fb129eaa087008d475611}\index{guia1\_ej3.c@{guia1\_ej3.c}!diagrama\_de\_flujo@{diagrama\_de\_flujo}}
+\index{diagrama\_de\_flujo@{diagrama\_de\_flujo}!guia1\_ej3.c@{guia1\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{diagrama\_de\_flujo()}{diagrama\_de\_flujo()}}
+{\footnotesize\ttfamily \label{guia1__ej3_8c_a02c7d0636d1fb129eaa087008d475611} 
+void diagrama\+\_\+de\+\_\+flujo (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structleds}{leds}} \texorpdfstring{$\ast$}{*}}]{puntero}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej3_8c_source_l00045}{45}} del archivo \mbox{\hyperlink{guia1__ej3_8c_source}{guia1\+\_\+ej3.\+c}}.
+
+
+
+\label{doc-var-members}
+\Hypertarget{guia1__ej3_8c_doc-var-members}
+\doxysubsection{Documentación de variables}
+\Hypertarget{guia1__ej3_8c_a8d2a14b15de242ed8eee3504187ce160}\index{guia1\_ej3.c@{guia1\_ej3.c}!my\_leds@{my\_leds}}
+\index{my\_leds@{my\_leds}!guia1\_ej3.c@{guia1\_ej3.c}}
+\doxysubsubsection{\texorpdfstring{my\_leds}{my\_leds}}
+{\footnotesize\ttfamily \label{guia1__ej3_8c_a8d2a14b15de242ed8eee3504187ce160} 
+struct \mbox{\hyperlink{structleds}{leds}} my\+\_\+leds}
+

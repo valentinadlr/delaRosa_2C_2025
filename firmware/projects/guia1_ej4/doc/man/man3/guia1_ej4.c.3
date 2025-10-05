@@ -1,0 +1,75 @@
+.TH "C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c" 3 "Guía 1 - Ejercicio 4" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdint\&.h>\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int8_t \fBconvertToBcdArray\fP (uint32_t data, uint8_t digits, uint8_t *bcd_number)"
+.br
+.RI "Convierte un número entero de 32 bits a formato BCD\&. "
+.ti -1c
+.RI "void \fBapp_main\fP (void)"
+.br
+.RI "Función principal de la aplicación\&. "
+.in -1c
+.SH "Documentación de funciones"
+.PP 
+.SS "void app_main (void )"
+
+.PP
+Función principal de la aplicación\&. 
+.IP "\(bu" 2
+Declara un número entero a convertir\&. 
+.br
+
+.IP "\(bu" 2
+Llama a \fBconvertToBcdArray\fP para obtener su representación en BCD\&. 
+.br
+
+.IP "\(bu" 2
+Imprime el resultado en la consola\&. 
+.PP
+
+.PP
+Definición en la línea \fB60\fP del archivo \fBguia1_ej4\&.c\fP\&.
+.SS "int8_t convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)"
+
+.PP
+Convierte un número entero de 32 bits a formato BCD\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIdata\fP Número entero a convertir\&. 
+.br
+\fIdigits\fP Cantidad de dígitos de salida\&. 
+.br
+\fIbcd_number\fP Puntero al arreglo donde se almacenará el resultado en BCD\&.
+.RE
+.PP
+\fBDevuelve\fP
+.RS 4
+0 si la conversión fue exitosa\&.
+.RE
+.PP
+\fBNota\fP
+.RS 4
+Los dígitos se guardan en el arreglo en orden, de izquierda a derecha\&. 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB42\fP del archivo \fBguia1_ej4\&.c\fP\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Guía 1 - Ejercicio 4 del código fuente\&.

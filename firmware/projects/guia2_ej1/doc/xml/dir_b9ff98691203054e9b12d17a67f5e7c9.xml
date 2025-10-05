@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="dir_b9ff98691203054e9b12d17a67f5e7c9" kind="dir">
+    <compoundname>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1</compoundname>
+    <innerdir refid="dir_93ebf8d85d8ccd4b4afb5a1f5d4e0d71">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/build</innerdir>
+    <innerdir refid="dir_947185d65d6e9e420f8ca5f42ef67a9d">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/main</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Este ejemplo hace parpadear el LED 1 (verde 🟢), el LED 2 (amarillo 🟡) y el LED 3 (rojo 🔴) de la placa ESP-EDU, cada uno a un frecuencias fija diferente.</para>
+<para><heading level="1">Cómo usar el ejemplo</heading>
+</para>
+<para>Seguir los pasos detallados en los siguientes instructivos (según sea necesario):</para>
+<para><orderedlist>
+<listitem><para>Instalación</para>
+</listitem><listitem><para>Compilación</para>
+</listitem><listitem><para>Grabación y Depuración </para>
+</listitem></orderedlist>
+</para>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/"/>
+  </compounddef>
+</doxygen>

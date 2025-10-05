@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Sistema de medición ultrasónica con FreeRTOS y Timer</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1genDesc">
+<title>General Description</title><para>Se crea un nuevo proyecto en el que se modifica la actividad 1 de la corriente guía, de manera de utilizar interrupciones para el control de las teclas y timers para el control de tiempos. <linebreak/>
+</para>
+<para>-&gt; Se eliminan los vTaskDelay</para>
+</sect1>
+<sect1 id="index_1hardConn">
+<title>Hardware Connection</title><para><table rows="5" cols="2"><row>
+<entry thead="yes" align='center'><para>EDU-CIAA-NXP  </para>
+</entry><entry thead="yes" align='left'><para>PERIFÉRICO  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>GPIO_3  </para>
+</entry><entry thead="no" align='left'><para>ECHO  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>GPIO_2  </para>
+</entry><entry thead="no" align='left'><para>TRIGGER  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>+5V  </para>
+</entry><entry thead="no" align='left'><para>+5V  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>GND  </para>
+</entry><entry thead="no" align='left'><para>GND  </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="index_1changelog">
+<title>Changelog</title><para><table rows="2" cols="2"><row>
+<entry thead="yes" align='center'><para>Date  </para>
+</entry><entry thead="yes" align='left'><para>Description  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>10/09/2025  </para>
+</entry><entry thead="no" align='left'><para>Document creation  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="author"><para>Valentina de la Rosa (<ulink url="mailto:valentina.delarosa@ingenieria.uner.edu.ar">valentina.delarosa@ingenieria.uner.edu.ar</ulink>) </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej2/main/guia2_ej2.c"/>
+  </compounddef>
+</doxygen>

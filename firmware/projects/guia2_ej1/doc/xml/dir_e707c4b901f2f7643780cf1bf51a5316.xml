@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="dir_e707c4b901f2f7643780cf1bf51a5316" kind="dir">
+    <compoundname>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/build/bootloader/CMakeFiles/3.30.2</compoundname>
+    <innerdir refid="dir_1a08c96584c464533f11b6e864be4496">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/build/bootloader/CMakeFiles/3.30.2/CompilerIdC</innerdir>
+    <innerdir refid="dir_b0937dbc8442ad214f504f3b2dbcf495">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/build/bootloader/CMakeFiles/3.30.2/CompilerIdCXX</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/build/bootloader/CMakeFiles/3.30.2/"/>
+  </compounddef>
+</doxygen>

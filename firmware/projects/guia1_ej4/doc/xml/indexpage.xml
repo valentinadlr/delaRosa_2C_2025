@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Conversión de Entero a BCD</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1genDesc">
+<title>General Description</title><para>Con ayuda del programa se implementa una función que convierte un número entero de 32 bits a su representación en formato BCD. <linebreak/>
+ El usuario debe indicar dígitos de salida y un puntero</para>
+</sect1>
+<sect1 id="index_1hardConn">
+<title>Hardware Connection</title><para>En este caso no se requiere</para>
+</sect1>
+<sect1 id="index_1changelog">
+<title>Changelog</title><para><table rows="2" cols="2"><row>
+<entry thead="yes" align='center'><para>Date  </para>
+</entry><entry thead="yes" align='left'><para>Description  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>10/09/2025  </para>
+</entry><entry thead="no" align='left'><para>Document creation  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="author"><para>Valentina de la Rosa (<ulink url="mailto:valentina.delarosa@ingenieria.uner.edu.ar">valentina.delarosa@ingenieria.uner.edu.ar</ulink>) </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej4/main/guia1_ej4.c"/>
+  </compounddef>
+</doxygen>

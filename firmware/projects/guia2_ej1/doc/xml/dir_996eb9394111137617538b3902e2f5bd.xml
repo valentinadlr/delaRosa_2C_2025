@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="dir_996eb9394111137617538b3902e2f5bd" kind="dir">
+    <compoundname>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/build/esp-idf/mbedtls/mbedtls</compoundname>
+    <innerdir refid="dir_447c48fbebabd1f8974e386ccc720c14">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/build/esp-idf/mbedtls/mbedtls/library</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej1/build/esp-idf/mbedtls/mbedtls/"/>
+  </compounddef>
+</doxygen>

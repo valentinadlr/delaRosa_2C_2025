@@ -1,0 +1,131 @@
+.TH "C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c" 3 "Guía 1 - Ejercicio 5y6" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/main/guia1_ej5y6.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdint\&.h>\fP
+.br
+\fR#include 'gpio_mcu\&.h'\fP
+.br
+
+.SS "Estructuras de datos"
+
+.in +1c
+.ti -1c
+.RI "struct \fBgpioConf_t\fP"
+.br
+.RI "Estructura de configuración de un pin GPIO\&. "
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetBCD\fP (uint8_t bcd, \fBgpioConf_t\fP *gpioVector)"
+.br
+.RI "Configura las salidas GPIO para representar un dígito en BCD\&. "
+.ti -1c
+.RI "int8_t \fBconvertToBcdArray\fP (uint32_t data, uint8_t digits, uint8_t *bcd_number)"
+.br
+.RI "Convierte un número entero a un arreglo de dígitos decimales (para BCD)\&. "
+.ti -1c
+.RI "void \fBDisplayBCD\fP (uint32_t valor, int digitos, \fBgpioConf_t\fP *gpiosBCD, \fBgpioConf_t\fP *gpiosSEL)"
+.br
+.RI "Muestra un número en un display multiplexado en formato BCD\&. "
+.ti -1c
+.RI "int \fBapp_main\fP (void)"
+.br
+.RI "Función principal de la aplicación\&. "
+.in -1c
+.SH "Documentación de funciones"
+.PP 
+.SS "int app_main (void )"
+
+.PP
+Función principal de la aplicación\&. 
+.IP "\(bu" 2
+Inicializa los pines GPIO asociados al BCD y a la selección de dígitos\&. 
+.br
+
+.IP "\(bu" 2
+Convierte el número entero definido en \fRnumero\fP a formato BCD\&. 
+.br
+
+.IP "\(bu" 2
+Lo muestra en el display multiplexado\&. 
+.br
+
+.PP
+
+.PP
+\fBDevuelve\fP
+.RS 4
+0 si la ejecución es exitosa\&. 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB122\fP del archivo \fBguia1_ej5y6\&.c\fP\&.
+.SS "int8_t convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)"
+
+.PP
+Convierte un número entero a un arreglo de dígitos decimales (para BCD)\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIdata\fP Número entero a convertir\&. 
+.br
+\fIdigits\fP Cantidad de dígitos de salida\&. 
+.br
+\fIbcd_number\fP Arreglo donde se almacenan los dígitos\&. 
+.RE
+.PP
+\fBDevuelve\fP
+.RS 4
+0 si la conversión fue exitosa\&. 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB80\fP del archivo \fBguia1_ej5y6\&.c\fP\&.
+.SS "void DisplayBCD (uint32_t valor, int digitos, \fBgpioConf_t\fP * gpiosBCD, \fBgpioConf_t\fP * gpiosSEL)"
+
+.PP
+Muestra un número en un display multiplexado en formato BCD\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIvalor\fP Número a mostrar\&. 
+.br
+\fIdigitos\fP Cantidad de dígitos a visualizar\&. 
+.br
+\fIgpiosBCD\fP Vector de pines para los bits de datos (BCD)\&. 
+.br
+\fIgpiosSEL\fP Vector de pines de selección para cada dígito del display\&. 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB97\fP del archivo \fBguia1_ej5y6\&.c\fP\&.
+.SS "void setBCD (uint8_t bcd, \fBgpioConf_t\fP * gpioVector)"
+
+.PP
+Configura las salidas GPIO para representar un dígito en BCD\&. 
+.PP
+\fBParámetros\fP
+.RS 4
+\fIbcd\fP Valor del dígito en formato decimal (0–9)\&. 
+.br
+\fIgpioVector\fP Vector de 4 pines GPIO que representan los bits del BCD\&. 
+.RE
+.PP
+
+.PP
+Definición en la línea \fB57\fP del archivo \fBguia1_ej5y6\&.c\fP\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Guía 1 - Ejercicio 5y6 del código fuente\&.

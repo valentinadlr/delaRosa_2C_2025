@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Blinking con UART</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1genDesc">
+<title>General Description</title><para>Se crea un nuevo proyecto en el que se modifica la actividad 2 de la corriente guia, agregando ahora el puerto serie. <linebreak/>
+</para>
+<para>Además se permite controlar el inicio y la retención de la medición tanto mediante las teclas físicas de la EDU-ESP como a través de comandos UART:<itemizedlist>
+<listitem><para>&apos;O&apos;: alterna el inicio o detención de mediciones.</para>
+</listitem><listitem><para>&apos;H&apos;: activa/desactiva la función hold del display.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1changelog">
+<title>Changelog</title><para><table rows="2" cols="2"><row>
+<entry thead="yes" align='center'><para>Date  </para>
+</entry><entry thead="yes" align='left'><para>Description  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>1/10/2025  </para>
+</entry><entry thead="no" align='left'><para>Document creation  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="author"><para>Valentina de la Rosa (<ulink url="mailto:valentina.delarosa@ingenieria.uner.edu.ar">valentina.delarosa@ingenieria.uner.edu.ar</ulink>) </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c"/>
+  </compounddef>
+</doxygen>

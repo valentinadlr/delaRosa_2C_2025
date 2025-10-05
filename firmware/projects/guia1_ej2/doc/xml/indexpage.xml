@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Blinking switch</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1genDesc">
+<title>General Description</title><para>Este ejemplo hace que:<itemizedlist>
+<listitem><para>El LED_1 parpadee mientras se mantenga presionado el SWITCH_1. <linebreak/>
+</para>
+</listitem><listitem><para>El LED_2 parpadee mientras se mantenga presionado el SWITCH_2. <linebreak/>
+</para>
+</listitem><listitem><para>El LED_3 parpadee mientras se mantengan presionados simultáneamente el SWITCH_1 y el SWITCH_2. <linebreak/>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1changelog">
+<title>Changelog</title><para>10/09 Creación del documento</para>
+<para><simplesect kind="author"><para>Valentina de la Rosa (<ulink url="mailto:valentina.delarosa@ingenieria.uner.edu.ar">valentina.delarosa@ingenieria.uner.edu.ar</ulink>) </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej2/main/guia1_ej2.c"/>
+  </compounddef>
+</doxygen>

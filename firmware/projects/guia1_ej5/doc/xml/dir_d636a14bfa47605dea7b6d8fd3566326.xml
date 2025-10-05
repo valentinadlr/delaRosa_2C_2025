@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="dir_d636a14bfa47605dea7b6d8fd3566326" kind="dir">
+    <compoundname>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/build</compoundname>
+    <innerdir refid="dir_e5c6e49a93200c113fc7d4451c534c7d">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/build/bootloader</innerdir>
+    <innerdir refid="dir_c93e3b8c6b587f1f20c3e5436f75a7af">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/build/CMakeFiles</innerdir>
+    <innerdir refid="dir_c805590851b561252cd4b083c45602b5">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/build/config</innerdir>
+    <innerdir refid="dir_eb937223ca07cc2f8cf904aa27127a88">C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/build/esp-idf</innerdir>
+    <innerfile refid="project__elf__src__esp32c6_8c">project_elf_src_esp32c6.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/build/"/>
+  </compounddef>
+</doxygen>

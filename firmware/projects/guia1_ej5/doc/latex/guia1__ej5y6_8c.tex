@@ -1,0 +1,125 @@
+\doxysection{Referencia del archivo C\+:/\+Repositorios/dela\+Rosa\+\_\+2\+C\+\_\+2025/firmware/projects/guia1\+\_\+ej5/main/guia1\+\_\+ej5y6.c}
+\hypertarget{guia1__ej5y6_8c}{}\label{guia1__ej5y6_8c}\index{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej5/main/guia1\_ej5y6.c@{C:/Repositorios/delaRosa\_2C\_2025/firmware/projects/guia1\_ej5/main/guia1\_ej5y6.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}gpio\+\_\+mcu.\+h"{}}\newline
+\doxysubsubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Estructura de configuración de un pin GPIO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{guia1__ej5y6_8c_a44b09146cfbbf3366c17a1ae206c444c}{set\+BCD}} (uint8\+\_\+t bcd, \mbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio\+Vector)
+\begin{DoxyCompactList}\small\item\em Configura las salidas GPIO para representar un dígito en BCD. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{guia1__ej5y6_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}{convert\+To\+Bcd\+Array}} (uint32\+\_\+t data, uint8\+\_\+t digits, uint8\+\_\+t \texorpdfstring{$\ast$}{*}bcd\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Convierte un número entero a un arreglo de dígitos decimales (para BCD). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{guia1__ej5y6_8c_a90f92130999438f2310ddeab55881e84}{Display\+BCD}} (uint32\+\_\+t valor, int digitos, \mbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}gpios\+BCD, \mbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}gpios\+SEL)
+\begin{DoxyCompactList}\small\item\em Muestra un número en un display multiplexado en formato BCD. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{guia1__ej5y6_8c_a144c9a97815e4b794fd4352aedd33695}{app\+\_\+main}} (void)
+\begin{DoxyCompactList}\small\item\em Función principal de la aplicación. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{guia1__ej5y6_8c_doc-func-members}
+\doxysubsection{Documentación de funciones}
+\Hypertarget{guia1__ej5y6_8c_a144c9a97815e4b794fd4352aedd33695}\index{guia1\_ej5y6.c@{guia1\_ej5y6.c}!app\_main@{app\_main}}
+\index{app\_main@{app\_main}!guia1\_ej5y6.c@{guia1\_ej5y6.c}}
+\doxysubsubsection{\texorpdfstring{app\_main()}{app\_main()}}
+{\footnotesize\ttfamily \label{guia1__ej5y6_8c_a144c9a97815e4b794fd4352aedd33695} 
+int app\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Función principal de la aplicación. 
+
+
+\begin{DoxyItemize}
+\item Inicializa los pines GPIO asociados al BCD y a la selección de dígitos. ~\newline
+
+\item Convierte el número entero definido en {\ttfamily numero} a formato BCD. ~\newline
+
+\item Lo muestra en el display multiplexado. ~\newline
+
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Devuelve}
+0 si la ejecución es exitosa. 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej5y6_8c_source_l00122}{122}} del archivo \mbox{\hyperlink{guia1__ej5y6_8c_source}{guia1\+\_\+ej5y6.\+c}}.
+
+\Hypertarget{guia1__ej5y6_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac}\index{guia1\_ej5y6.c@{guia1\_ej5y6.c}!convertToBcdArray@{convertToBcdArray}}
+\index{convertToBcdArray@{convertToBcdArray}!guia1\_ej5y6.c@{guia1\_ej5y6.c}}
+\doxysubsubsection{\texorpdfstring{convertToBcdArray()}{convertToBcdArray()}}
+{\footnotesize\ttfamily \label{guia1__ej5y6_8c_a52ee2e8838ceab35f8bdc0f4e58a0dac} 
+int8\+\_\+t convert\+To\+Bcd\+Array (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data}{, }\item[{uint8\+\_\+t}]{digits}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bcd\+\_\+number}{}\end{DoxyParamCaption})}
+
+
+
+Convierte un número entero a un arreglo de dígitos decimales (para BCD). 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em data} & Número entero a convertir. \\
+\hline
+\mbox{\texttt{in}}  & {\em digits} & Cantidad de dígitos de salida. \\
+\hline
+\mbox{\texttt{out}}  & {\em bcd\+\_\+number} & Arreglo donde se almacenan los dígitos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+0 si la conversión fue exitosa. 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej5y6_8c_source_l00080}{80}} del archivo \mbox{\hyperlink{guia1__ej5y6_8c_source}{guia1\+\_\+ej5y6.\+c}}.
+
+\Hypertarget{guia1__ej5y6_8c_a90f92130999438f2310ddeab55881e84}\index{guia1\_ej5y6.c@{guia1\_ej5y6.c}!DisplayBCD@{DisplayBCD}}
+\index{DisplayBCD@{DisplayBCD}!guia1\_ej5y6.c@{guia1\_ej5y6.c}}
+\doxysubsubsection{\texorpdfstring{DisplayBCD()}{DisplayBCD()}}
+{\footnotesize\ttfamily \label{guia1__ej5y6_8c_a90f92130999438f2310ddeab55881e84} 
+void Display\+BCD (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{valor}{, }\item[{int}]{digitos}{, }\item[{\mbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpios\+BCD}{, }\item[{\mbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpios\+SEL}{}\end{DoxyParamCaption})}
+
+
+
+Muestra un número en un display multiplexado en formato BCD. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em valor} & Número a mostrar. \\
+\hline
+\mbox{\texttt{in}}  & {\em digitos} & Cantidad de dígitos a visualizar. \\
+\hline
+\mbox{\texttt{in}}  & {\em gpios\+BCD} & Vector de pines para los bits de datos (BCD). \\
+\hline
+\mbox{\texttt{in}}  & {\em gpios\+SEL} & Vector de pines de selección para cada dígito del display. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej5y6_8c_source_l00097}{97}} del archivo \mbox{\hyperlink{guia1__ej5y6_8c_source}{guia1\+\_\+ej5y6.\+c}}.
+
+\Hypertarget{guia1__ej5y6_8c_a44b09146cfbbf3366c17a1ae206c444c}\index{guia1\_ej5y6.c@{guia1\_ej5y6.c}!setBCD@{setBCD}}
+\index{setBCD@{setBCD}!guia1\_ej5y6.c@{guia1\_ej5y6.c}}
+\doxysubsubsection{\texorpdfstring{setBCD()}{setBCD()}}
+{\footnotesize\ttfamily \label{guia1__ej5y6_8c_a44b09146cfbbf3366c17a1ae206c444c} 
+void set\+BCD (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bcd}{, }\item[{\mbox{\hyperlink{structgpio_conf__t}{gpio\+Conf\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+Configura las salidas GPIO para representar un dígito en BCD. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\texttt{in}}  & {\em bcd} & Valor del dígito en formato decimal (0–9). \\
+\hline
+\mbox{\texttt{in}}  & {\em gpio\+Vector} & Vector de 4 pines GPIO que representan los bits del BCD. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{guia1__ej5y6_8c_source_l00057}{57}} del archivo \mbox{\hyperlink{guia1__ej5y6_8c_source}{guia1\+\_\+ej5y6.\+c}}.
+

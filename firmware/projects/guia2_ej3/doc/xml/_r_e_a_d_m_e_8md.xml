@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Ejemplo<sp/>blinking<sp/>tasks</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Este<sp/>ejemplo<sp/>hace<sp/>parpadear<sp/>el<sp/>LED<sp/>1<sp/>(verde<sp/>🟢),<sp/>el<sp/>LED<sp/>2<sp/>(amarillo<sp/>🟡)<sp/>y<sp/>el<sp/>LED<sp/>3<sp/>(rojo<sp/>🔴)<sp/>de<sp/>la<sp/>placa<sp/>ESP-EDU,<sp/>cada<sp/>uno<sp/>a<sp/>un<sp/>frecuencias<sp/>fija<sp/>diferente.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Cómo<sp/>usar<sp/>el<sp/>ejemplo</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Seguir<sp/>los<sp/>pasos<sp/>detallados<sp/>en<sp/>los<sp/>siguientes<sp/>instructivos<sp/>(según<sp/>sea<sp/>necesario):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>[Instalación](../../../documentación/instalación.md)</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>[Compilación](../../../documentación/compilación.md)</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>[Grabación<sp/>y<sp/>Depuración](../../../documentación/depuración.md)</highlight></codeline>
+    </programlisting>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/README.md"/>
+  </compounddef>
+</doxygen>

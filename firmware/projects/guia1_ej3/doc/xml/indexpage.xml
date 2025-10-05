@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Control de LEDs con modos de operación</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1genDesc">
+<title>General Description</title><para>Este programa permite controlar el encendido de los LEDs mediante una estructura que define: <linebreak/>
+<itemizedlist>
+<listitem><para>El número de LED a controlar. <linebreak/>
+</para>
+</listitem><listitem><para>El modo de operación (ON, OFF, TOGGLE). <linebreak/>
+</para>
+</listitem><listitem><para>La cantidad de ciclos de parpadeo. <linebreak/>
+</para>
+</listitem><listitem><para>El período de cada ciclo de encendido/apagado. <linebreak/>
+ Todo a partir del diagrama de flujo proporcionado por la cátedra</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1changelog">
+<title>Changelog</title><para><table rows="2" cols="2"><row>
+<entry thead="yes" align='center'><para>Date  </para>
+</entry><entry thead="yes" align='left'><para>Description  </para>
+</entry></row>
+<row>
+<entry thead="no" align='center'><para>20/08/2025  </para>
+</entry><entry thead="no" align='left'><para>Creación del documento  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="author"><para>Valentina de la Rosa (<ulink url="mailto:valentina.delarosa@ingenieria.uner.edu.ar">valentina.delarosa@ingenieria.uner.edu.ar</ulink>) </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej3/main/guia1_ej3.c"/>
+  </compounddef>
+</doxygen>

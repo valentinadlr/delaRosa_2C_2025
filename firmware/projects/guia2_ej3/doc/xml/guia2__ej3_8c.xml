@@ -1,0 +1,591 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="guia2__ej3_8c" kind="file" language="C++">
+    <compoundname>guia2_ej3.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="yes">freertos/FreeRTOS.h</includes>
+    <includes local="yes">freertos/task.h</includes>
+    <includes local="yes">led.h</includes>
+    <includes local="yes">hc_sr04.h</includes>
+    <includes local="yes">gpio_mcu.h</includes>
+    <includes local="yes">switch.h</includes>
+    <includes local="yes">lcditse0803.h</includes>
+    <includes local="yes">timer_mcu.h</includes>
+    <includes local="yes">uart_mcu.h</includes>
+    <includes local="yes">esp_mac.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c</label>
+        <link refid="guia2__ej3_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>esp_mac.h</label>
+      </node>
+      <node id="5">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="6">
+        <label>freertos/task.h</label>
+      </node>
+      <node id="9">
+        <label>gpio_mcu.h</label>
+      </node>
+      <node id="8">
+        <label>hc_sr04.h</label>
+      </node>
+      <node id="11">
+        <label>lcditse0803.h</label>
+      </node>
+      <node id="7">
+        <label>led.h</label>
+      </node>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="10">
+        <label>switch.h</label>
+      </node>
+      <node id="12">
+        <label>timer_mcu.h</label>
+      </node>
+      <node id="13">
+        <label>uart_mcu.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="guia2__ej3_8c_1a2b0cb40d7a31ce7e8b3f906fd55df312" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t medir_task_handle</definition>
+        <argsstring></argsstring>
+        <name>medir_task_handle</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="39" column="14" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="guia2__ej3_8c_1a23fa2e6a8b0cbaf464c822d101153441" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t leds_task_handle</definition>
+        <argsstring></argsstring>
+        <name>leds_task_handle</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="40" column="14" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="guia2__ej3_8c_1abaf073dd4f91187228bc62d1177a72e4" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t display_task_handle</definition>
+        <argsstring></argsstring>
+        <name>display_task_handle</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="41" column="14" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="guia2__ej3_8c_1a4e4967ac70f1e8a89b2fea62027a968c" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t uart_task_handle</definition>
+        <argsstring></argsstring>
+        <name>uart_task_handle</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="42" column="14" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="guia2__ej3_8c_1acdb1d9e75320b05630b724455b996078" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool act_med</definition>
+        <argsstring></argsstring>
+        <name>act_med</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="43" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="guia2__ej3_8c_1af0129e079b57e897edf00f22cc25f3d4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool hold</definition>
+        <argsstring></argsstring>
+        <name>hold</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="44" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t medida</definition>
+        <argsstring></argsstring>
+        <name>medida</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="45" column="10" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="guia2__ej3_8c_1ac5fe4e48184e8e9f39fe85be5c91e77d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int periodoUS</definition>
+        <argsstring></argsstring>
+        <name>periodoUS</name>
+        <initializer>= 1000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="46" column="5" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="46" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="guia2__ej3_8c_1abc0fa49d4e5b6933f142b6e937273ccb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tecla1</definition>
+        <argsstring>(void)</argsstring>
+        <name>Tecla1</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Callback de la tecla 1 (SW1): alterna el estado de medición. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="51" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="guia2__ej3_8c_1ab4f43cc73c4122e2a09d720744b72c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tecla2</definition>
+        <argsstring>(void)</argsstring>
+        <name>Tecla2</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Callback de la tecla 2 (SW2): alterna el modo hold del display. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="59" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="guia2__ej3_8c_1afaccfed84cd1498a05ea04a65f1209b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FuncTimerA</definition>
+        <argsstring>(void *param)</argsstring>
+        <name>FuncTimerA</name>
+        <param>
+          <type>void *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+<para>Función del temporizador A. Notifica a las tareas principales. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Puntero genérico (no utilizado). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="68" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="68" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="guia2__ej3_8c_1ad32962f655aec828bcc030f9d9acb2c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UART</definition>
+        <argsstring>(void *pvParameters)</argsstring>
+        <name>UART</name>
+        <param>
+          <type>void *</type>
+          <declname>pvParameters</declname>
+        </param>
+        <briefdescription>
+<para>Rutina de interrupción UART. Lee un byte y ejecuta comandos de control. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Comandos:<itemizedlist>
+<listitem><para>&apos;O&apos;: alterna medición.</para>
+</listitem><listitem><para>&apos;H&apos;: alterna modo hold.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pvParameters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parámetros de la tarea (no utilizado). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="84" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="84" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="guia2__ej3_8c_1a5121c6b0aa7ff8709d335c065ddac2e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Medir_UART</definition>
+        <argsstring>()</argsstring>
+        <name>Medir_UART</name>
+        <briefdescription>
+<para>Envía la distancia medida al puerto serie en formato: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>XXX cm\r\n</computeroutput> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="106" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="106" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="guia2__ej3_8c_1a47dd9390a43b96a712b307b6ae82416b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Medir</definition>
+        <argsstring>(void *pvParameters)</argsstring>
+        <name>Medir</name>
+        <param>
+          <type>void *</type>
+          <declname>pvParameters</declname>
+        </param>
+        <briefdescription>
+<para>Tarea que realiza la medición del sensor ultrasónico. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Espera notificación del temporizador y, si la medición está activa, obtiene la distancia y la envía por UART.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pvParameters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parámetros de la tarea (no utilizado). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="121" column="13" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="121" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="guia2__ej3_8c_1af5fd906cdba23d92ab5f85bbd2e1eb83" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void LEDs</definition>
+        <argsstring>(void *pvParameters)</argsstring>
+        <name>LEDs</name>
+        <param>
+          <type>void *</type>
+          <declname>pvParameters</declname>
+        </param>
+        <briefdescription>
+<para>Tarea encargada del control de LEDs según la distancia medida. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>&lt;10 cm: todos apagados <linebreak/>
+</para>
+</listitem><listitem><para>&lt;20 cm: LED1 encendido <linebreak/>
+</para>
+</listitem><listitem><para>&lt;30 cm: LED1 y LED2 encendidos <linebreak/>
+</para>
+</listitem><listitem><para>≥30 cm: todos encendidos <linebreak/>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pvParameters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parámetros de la tarea (no utilizado). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="144" column="13" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="144" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="guia2__ej3_8c_1a0c5617af49f09dbea92a09719a7c5e9d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Display</definition>
+        <argsstring>(void *pvParameters)</argsstring>
+        <name>Display</name>
+        <param>
+          <type>void *</type>
+          <declname>pvParameters</declname>
+        </param>
+        <briefdescription>
+<para>Tarea encargada de actualizar el display LCD con la distancia. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Si el modo hold está activo, mantiene la última medición mostrada.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pvParameters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parámetros de la tarea (no utilizado). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="187" column="13" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="187" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="guia2__ej3_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void app_main</definition>
+        <argsstring>(void)</argsstring>
+        <name>app_main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" line="206" column="6" bodyfile="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c" bodystart="206" bodyend="224"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*==================[inclusions]=============================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;freertos/FreeRTOS.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;freertos/task.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;led.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hc_sr04.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;gpio_mcu.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;switch.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;lcditse0803.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;timer_mcu.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;uart_mcu.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;esp_mac.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*==================[macros<sp/>and<sp/>definitions]=================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*==================[internal<sp/>data<sp/>definition]===============================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="guia2__ej3_8c_1a2b0cb40d7a31ce7e8b3f906fd55df312" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="guia2__ej3_8c_1a2b0cb40d7a31ce7e8b3f906fd55df312" kindref="member">medir_task_handle</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="40" refid="guia2__ej3_8c_1a23fa2e6a8b0cbaf464c822d101153441" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="guia2__ej3_8c_1a23fa2e6a8b0cbaf464c822d101153441" kindref="member">leds_task_handle</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="41" refid="guia2__ej3_8c_1abaf073dd4f91187228bc62d1177a72e4" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="guia2__ej3_8c_1abaf073dd4f91187228bc62d1177a72e4" kindref="member">display_task_handle</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="42" refid="guia2__ej3_8c_1a4e4967ac70f1e8a89b2fea62027a968c" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="guia2__ej3_8c_1a4e4967ac70f1e8a89b2fea62027a968c" kindref="member">uart_task_handle</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="43" refid="guia2__ej3_8c_1acdb1d9e75320b05630b724455b996078" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1acdb1d9e75320b05630b724455b996078" kindref="member">act_med</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44" refid="guia2__ej3_8c_1af0129e079b57e897edf00f22cc25f3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1af0129e079b57e897edf00f22cc25f3d4" kindref="member">hold</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45" refid="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" kindref="member">medida</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="46" refid="guia2__ej3_8c_1ac5fe4e48184e8e9f39fe85be5c91e77d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1ac5fe4e48184e8e9f39fe85be5c91e77d" kindref="member">periodoUS</ref><sp/>=<sp/>1000000;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*==================[internal<sp/>functions<sp/>declaration]=========================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="guia2__ej3_8c_1abc0fa49d4e5b6933f142b6e937273ccb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1abc0fa49d4e5b6933f142b6e937273ccb" kindref="member">Tecla1</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia2__ej3_8c_1acdb1d9e75320b05630b724455b996078" kindref="member">act_med</ref><sp/>=<sp/>!<ref refid="guia2__ej3_8c_1acdb1d9e75320b05630b724455b996078" kindref="member">act_med</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="guia2__ej3_8c_1ab4f43cc73c4122e2a09d720744b72c50" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1ab4f43cc73c4122e2a09d720744b72c50" kindref="member">Tecla2</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="guia2__ej3_8c_1af0129e079b57e897edf00f22cc25f3d4" kindref="member">hold</ref><sp/>=<sp/>!<ref refid="guia2__ej3_8c_1af0129e079b57e897edf00f22cc25f3d4" kindref="member">hold</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="guia2__ej3_8c_1afaccfed84cd1498a05ea04a65f1209b1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1afaccfed84cd1498a05ea04a65f1209b1" kindref="member">FuncTimerA</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*param)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskNotifyGiveFromISR(<ref refid="guia2__ej3_8c_1a2b0cb40d7a31ce7e8b3f906fd55df312" kindref="member">medir_task_handle</ref>,<sp/>pdFALSE);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskNotifyGiveFromISR(<ref refid="guia2__ej3_8c_1a23fa2e6a8b0cbaf464c822d101153441" kindref="member">leds_task_handle</ref>,<sp/>pdFALSE);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskNotifyGiveFromISR(<ref refid="guia2__ej3_8c_1abaf073dd4f91187228bc62d1177a72e4" kindref="member">display_task_handle</ref>,<sp/>pdFALSE);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="guia2__ej3_8c_1ad32962f655aec828bcc030f9d9acb2c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1ad32962f655aec828bcc030f9d9acb2c9" kindref="member">UART</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pvParameters)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>dato;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>UartReadByte(UART_PC,<sp/>&amp;dato);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(dato)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;O&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="guia2__ej3_8c_1abc0fa49d4e5b6933f142b6e937273ccb" kindref="member">Tecla1</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="guia2__ej3_8c_1ab4f43cc73c4122e2a09d720744b72c50" kindref="member">Tecla2</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="guia2__ej3_8c_1a5121c6b0aa7ff8709d335c065ddac2e3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1a5121c6b0aa7ff8709d335c065ddac2e3" kindref="member">Medir_UART</ref>()</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>UartSendString(UART_PC,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)UartItoa(<ref refid="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" kindref="member">medida</ref>,<sp/>10));</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>UartSendString(UART_PC,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>cm\r\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Medir(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pvParameters)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulTaskNotifyTake(pdTRUE,<sp/>portMAX_DELAY);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="guia2__ej3_8c_1acdb1d9e75320b05630b724455b996078" kindref="member">act_med</ref>)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" kindref="member">medida</ref><sp/>=<sp/>HcSr04ReadDistanceInCentimeters();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="guia2__ej3_8c_1a5121c6b0aa7ff8709d335c065ddac2e3" kindref="member">Medir_UART</ref>()<sp/>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>LEDs(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pvParameters)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulTaskNotifyTake(pdTRUE,<sp/>portMAX_DELAY);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="guia2__ej3_8c_1acdb1d9e75320b05630b724455b996078" kindref="member">act_med</ref>)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" kindref="member">medida</ref><sp/>&lt;<sp/>10)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedsOffAll();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" kindref="member">medida</ref><sp/>&lt;<sp/>20)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_1);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOff(LED_2);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOff(LED_3);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" kindref="member">medida</ref><sp/>&lt;<sp/>30)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_1);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_2);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOff(LED_3);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_1);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_2);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedOn(LED_3);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LedsOffAll();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Display(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pvParameters)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulTaskNotifyTake(pdTRUE,<sp/>portMAX_DELAY);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="guia2__ej3_8c_1acdb1d9e75320b05630b724455b996078" kindref="member">act_med</ref>)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="guia2__ej3_8c_1af0129e079b57e897edf00f22cc25f3d4" kindref="member">hold</ref>)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LcdItsE0803Write(<ref refid="guia2__ej3_8c_1ab9eb194e87ab859ebe94acb88a799176" kindref="member">medida</ref>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LcdItsE0803Off();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="comment">/*==================[external<sp/>functions<sp/>definition]==========================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="guia2__ej3_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="guia2__ej3_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" kindref="member">app_main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>LedsInit();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>SwitchesInit();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>HcSr04Init(GPIO_3,<sp/>GPIO_2);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>LcdItsE0803Init();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>SwitchActivInt(SWITCH_1,<sp/><ref refid="guia2__ej3_8c_1abc0fa49d4e5b6933f142b6e937273ccb" kindref="member">Tecla1</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>SwitchActivInt(SWITCH_2,<sp/><ref refid="guia2__ej3_8c_1ab4f43cc73c4122e2a09d720744b72c50" kindref="member">Tecla2</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>xTaskCreate(Medir,<sp/></highlight><highlight class="stringliteral">&quot;Medir&quot;</highlight><highlight class="normal">,<sp/>512,<sp/>NULL,<sp/>5,<sp/>&amp;<ref refid="guia2__ej3_8c_1a2b0cb40d7a31ce7e8b3f906fd55df312" kindref="member">medir_task_handle</ref>);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>xTaskCreate(LEDs,<sp/></highlight><highlight class="stringliteral">&quot;LEDs&quot;</highlight><highlight class="normal">,<sp/>512,<sp/>NULL,<sp/>5,<sp/>&amp;<ref refid="guia2__ej3_8c_1a23fa2e6a8b0cbaf464c822d101153441" kindref="member">leds_task_handle</ref>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>xTaskCreate(Display,<sp/></highlight><highlight class="stringliteral">&quot;Display&quot;</highlight><highlight class="normal">,<sp/>512,<sp/>NULL,<sp/>5,<sp/>&amp;<ref refid="guia2__ej3_8c_1abaf073dd4f91187228bc62d1177a72e4" kindref="member">display_task_handle</ref>);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>timer_config_t<sp/>timer<sp/>=<sp/>{.timer<sp/>=<sp/>TIMER_A,<sp/>.period<sp/>=<sp/><ref refid="guia2__ej3_8c_1ac5fe4e48184e8e9f39fe85be5c91e77d" kindref="member">periodoUS</ref>,<sp/>.func_p<sp/>=<sp/><ref refid="guia2__ej3_8c_1afaccfed84cd1498a05ea04a65f1209b1" kindref="member">FuncTimerA</ref>,<sp/>.param_p<sp/>=<sp/>NULL};</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>serial_config_t<sp/>uart_pc<sp/>=<sp/>{.port<sp/>=<sp/>UART_PC,<sp/>.baud_rate<sp/>=<sp/>9600,<sp/>.func_p<sp/>=<sp/><ref refid="guia2__ej3_8c_1ad32962f655aec828bcc030f9d9acb2c9" kindref="member">UART</ref>,<sp/>.param_p<sp/>=<sp/>NULL};</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>TimerInit(&amp;timer);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>UartInit(&amp;uart_pc);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>TimerStart(TIMER_A);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia2_ej3/main/guia2_ej3.c"/>
+  </compounddef>
+</doxygen>

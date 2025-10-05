@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="es">
+  <compounddef id="dir_6e46dd75db53708cebf8e23d18d5281e" kind="dir">
+    <compoundname>C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/build/esp-idf/mbedtls/mbedtls/library</compoundname>
+    <innerfile refid="error_8c">error.c</innerfile>
+    <innerfile refid="psa__crypto__driver__wrappers__no__static_8c">psa_crypto_driver_wrappers_no_static.c</innerfile>
+    <innerfile refid="ssl__debug__helpers__generated_8c">ssl_debug_helpers_generated.c</innerfile>
+    <innerfile refid="version__features_8c">version_features.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Repositorios/delaRosa_2C_2025/firmware/projects/guia1_ej5/build/esp-idf/mbedtls/mbedtls/library/"/>
+  </compounddef>
+</doxygen>
