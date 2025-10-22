@@ -116,7 +116,6 @@ void Medir_UART()
  * Espera notificación del temporizador y, si la medición está activa,
  * obtiene la distancia y la envía por UART.
  * 
- * @param pvParameters Parámetros de la tarea (no utilizado).
  */
 static void Medir(void *pvParameters)
 {

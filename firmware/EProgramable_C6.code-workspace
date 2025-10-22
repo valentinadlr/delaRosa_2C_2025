@@ -38,6 +38,9 @@
         },
         {
             "path": "projects/guia2_ej3"
+        },
+        {
+            "path": "projects/osciloscopio"
         }
     ],
     "settings": {
@@ -92,7 +95,8 @@
             "mpu6050.h": "c",
             "i2c_mcu.h": "c",
             "compare": "c",
-            "cstdint": "c"
+            "cstdint": "c",
+            "cstdlib": "c"
         },
     },
     "tasks": {
